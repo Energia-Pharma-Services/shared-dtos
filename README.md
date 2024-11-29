@@ -1,4 +1,4 @@
-This is a shared repository used as a submodule here. 
+This is a shared repository used as a submodule here.
 
 link: https://github.com/Energia-Pharma-Services/shared-dtos.git
 
@@ -6,10 +6,11 @@ command to add this as a submodule in any other project:
 'git submodule add https://github.com/Energia-Pharma-Services/shared-dtos.git path/to/destination/folder
 
 <!-- To pull all the code of the submodule once cloned -->
-- 'git submodule init' 
 
+- 'git submodule init'
 
 <!-- Make changes inside a submodule -->
+
 - cd inside the submodule directory.
 - Make the desired changes.
 - git commit the new changes.
@@ -20,4 +21,5 @@ command to add this as a submodule in any other project:
 - When you git commit in the main repository, it will update the pointer.
 
 <!-- More Info -->
+
 - https://gist.github.com/gitaarik/8735255
