@@ -4,45 +4,45 @@ export interface CreateFormDto {
 
 export interface UpdateFormDto {
   name?: string;
-  is_active?: boolean;
-  is_deleted?: boolean;
-  updated_by: number;
-  updated_at: Date;
+  isActive?: boolean;
+  isDeleted?: boolean;
+  updatedBy: number;
+  updatedAt: Date;
 }
 
 export interface FormDto {
   id: number;
   name: string;
-  created_at: Date | null;
-  created_by: number;
-  updated_at: Date | null;
-  updated_by: number;
-  is_active: boolean | null;
-  is_deleted: boolean | null;
+  createdAt: Date | null;
+  createdBy: number;
+  updatedAt: Date | null;
+  updatedBy: number;
+  isActive: boolean | null;
+  isDeleted: boolean | null;
 }
 
 export interface CreateSectionDto {
-  section_text: string;
+  sectionText: string;
 }
 
 export interface UpdateSectionDto {
-  section_text?: string;
-  is_active?: boolean;
-  is_deleted?: boolean;
-  updated_by: number;
-  updated_at: Date;
+  sectionText?: string;
+  isActive?: boolean;
+  isDeleted?: boolean;
+  updatedBy: number;
+  updatedAt: Date;
 }
 
 export interface SectionDto {
   id: number;
-  section_text: string;
-  form_id: number;
-  created_at: Date;
-  created_by: number;
-  updated_at: Date;
-  updated_by: number;
-  is_active: boolean;
-  is_deleted: boolean;
+  sectionText: string;
+  formId: number;
+  createdAt: Date;
+  createdBy: number;
+  updatedAt: Date;
+  updatedBy: number;
+  isActive: boolean;
+  isDeleted: boolean;
 }
 
 export interface CreateSubsectionDto {
@@ -50,24 +50,24 @@ export interface CreateSubsectionDto {
 }
 
 export interface UpdateSubsectionDto {
-  subsection_text?: string;
-  is_active?: boolean;
-  is_deleted?: boolean;
-  updated_at: Date;
-  updated_by: number;
+  subsectionText?: string;
+  isActive?: boolean;
+  isDeleted?: boolean;
+  updatedAt: Date;
+  updatedBy: number;
 }
 
 export interface SubsectionDto {
   id: number;
-  subsection_text: string;
-  created_at: Date;
-  created_by: number;
-  updated_at: Date;
-  updated_by: number;
-  is_active: boolean;
-  is_deleted: boolean;
-  section_id: number;
-  form_id: number;
+  subsectionText: string;
+  createdAt: Date;
+  createdBy: number;
+  updatedAt: Date;
+  updatedBy: number;
+  isActive: boolean;
+  isDeleted: boolean;
+  sectionId: number;
+  formId: number;
 }
 
 export interface CreateQuestionTypeDto {
@@ -76,50 +76,50 @@ export interface CreateQuestionTypeDto {
 
 export interface UpdateQuestionTypeDto {
   type?: string;
-  is_active?: boolean;
-  is_deleted?: boolean;
+  isActive?: boolean;
+  isDeleted?: boolean;
 }
 
 export interface QuestionTypeDto {
   id: number;
   type: string;
-  created_at: Date;
-  created_by: number;
-  updated_at: Date;
-  updated_by: number;
-  is_active: boolean;
-  is_deleted: boolean;
+  createdAt: Date;
+  createdBy: number;
+  updatedAt: Date;
+  updatedBy: number;
+  isActive: boolean;
+  isDeleted: boolean;
 }
 
 export interface CreateQuestionDto {
   name: string;
-  question_type: number;
-  subsection_id: number;
-  section_id: number;
-  form_id: number;
+  questionType: number;
+  subsectionId: number;
+  sectionId: number;
+  formId: number;
 }
 
 export interface UpdateQuestionDto {
   name?: string;
-  question_type?: number;
-  subsection_id?: number;
-  section_id?: number;
-  form_id?: number;
-  is_active?: boolean;
-  is_deleted?: boolean;
+  questionType?: number;
+  subsectionId?: number;
+  sectionId?: number;
+  formId?: number;
+  isActive?: boolean;
+  isDeleted?: boolean;
 }
 
 export interface QuestionDto {
   id: number;
   name: string;
-  created_at: Date;
-  created_by: number;
-  updated_at: Date;
-  updated_by: number;
-  is_active: boolean;
-  is_deleted: boolean;
-  question_type: number;
-  subsection_id: number;
-  section_id: number;
-  form_id: number;
+  createdAt: Date;
+  createdBy: number;
+  updatedAt: Date;
+  updatedBy: number;
+  isActive: boolean;
+  isDeleted: boolean;
+  questionType: number;
+  subsectionId: number;
+  sectionId: number;
+  formId: number;
 }

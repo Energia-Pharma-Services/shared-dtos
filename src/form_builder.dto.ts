@@ -1,8 +1,8 @@
 export interface QuestionDto {
   id: number | null;
   name: string | null;
-  question_type_id: number | null;
-  question_type: string | null;
+  questionTypeId: number | null;
+  questionType: string | null;
   dropdownId: number | null;
   isReadOnly: boolean;
   isRequired: boolean;
@@ -10,35 +10,100 @@ export interface QuestionDto {
 
 export interface SubsectionDto {
   id: number | null;
-  subsection_text: string | null;
+  subsectionText: string | null;
   questions: QuestionDto[];
 }
 
 export interface SectionDto {
   id: number | null;
-  section_text: string | null;
+  sectionText: string | null;
   subsections: SubsectionDto[];
 }
 
 export interface FormDto {
   id: number;
   name: string;
-  created_at: Date;
-  updated_at: Date;
-  created_by: number;
-  updated_by: number;
-  is_active: boolean;
-  is_deleted: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+  createdBy: number;
+  updatedBy: number;
+  isActive: boolean;
+  isDeleted: boolean;
   sections: SectionDto[];
 }
 
 export interface GeneralFormDto {
   id: number;
   name: string;
-  created_at: Date | null;
-  created_by: number;
-  updated_at: Date | null;
-  updated_by: number;
-  is_active: boolean | null;
-  is_deleted: boolean | null;
+  createdAt: Date | null;
+  createdBy: number;
+  updatedAt: Date | null;
+  updatedBy: number;
+  isActive: boolean | null;
+  isDeleted: boolean | null;
+}
+
+export interface Section {
+  id: number;
+  sectionText: string;
+  subsections: Subsection[];
+}
+
+export interface Subsection {
+  id: number;
+  subsectionText: string;
+  questions: Question[];
+}
+
+export interface Question {
+  id: number;
+  name: string;
+  questionTypeId: number | null;
+  questionType: string | null;
+  dropdownId: number | null;
+  isReadOnly: boolean;
+  isRequired: boolean;
+  include?: boolean;
+  questionId?: number;
+}
+
+export interface FormRequest {
+  id: number;
+  name: string;
+  createdAt: Date;
+  updatedAt: Date;
+  createdBy: number;
+  updatedBy: number;
+  isActive: boolean;
+  isDeleted: boolean;
+  sections: Section[];
+}
+
+export interface FormSelectFields {
+  formId: number;
+  formName: string;
+  formCreatedAt: Date;
+  formUpdatedAt: Date;
+  formCreatedBy: number;
+  formUpdatedBy: number;
+  formIsActive: boolean;
+  formIsDeleted: boolean;
+  sectionId: number | null;
+  sectionText: string | null;
+  subsectionId: number | null;
+  subsectionText: string | null;
+  questionId: number | null;
+  questionName: string | null;
+  dropdownId: number | null;
+  isReadOnly: boolean | null;
+  isRequired: boolean | null;
+  questionTypeId: number | null;
+  questionType: string | null;
+}
+
+export interface AuditFields {
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
 }

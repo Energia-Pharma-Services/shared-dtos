@@ -1,44 +1,51 @@
-export interface CreateParentProductDto {
-  product_code: string;
-  product_name: string;
-  active_substance_en: string;
-  active_substance_fr: string;
-  ATC_code: string;
-  product_type: string;
+export interface CreateParentProductRequest {
+  productCode: string;
+  productName: string;
+  activeSubstanceEn: string;
+  activeSubstanceFr: string;
+  atcCode: string;
+  productType: string;
 }
 
 export interface UpdateParentProductDto {
-  product_code?: string;
-  product_name?: string;
-  active_substance_en?: string;
-  active_substance_fr?: string;
-  ATC_code?: string;
-  product_type?: string;
-  is_active?: boolean;
-  is_deleted?: boolean;
+  productCode?: string;
+  productName?: string;
+  activeSubstanceEn?: string;
+  activeSubstanceFr?: string;
+  atcCode?: string;
+  productType?: string;
+  isActive?: boolean;
+  isDeleted?: boolean;
 }
 
 export interface ParentProductDto {
   id: number;
-  product_code: string;
-  product_name: string;
-  active_substance_en: string;
-  active_substance_fr: string;
-  ATC_code: string;
-  product_type: string;
-  created_at: Date;
-  created_by: number;
-  updated_at: Date;
-  updated_by: number;
-  is_active: boolean;
-  is_deleted: boolean;
+  productCode: string;
+  productName: string;
+  activeSubstanceEn: string;
+  activeSubstanceFr: string;
+  atcCode: string;
+  productType: string;
+  createdAt: Date;
+  createdBy: number;
+  updatedAt: Date;
+  updatedBy: number;
+  isActive: boolean;
+  isDeleted: boolean;
 }
 
 export interface ParentProductAuditTrailDto {
   id: number;
-  parent_product_id: number;
+  parentProductId: number;
   action: string;
-  updated_by: number;
-  updated_at: Date;
+  updatedBy: number;
+  updatedAt: Date;
   message: string;
+}
+
+export interface DeleteProductPayload {
+  isDeleted: boolean;
+  updatedBy: number;
+  updatedAt: Date;
+  isActive: boolean;
 }
