@@ -90,3 +90,39 @@ export interface DeleteProcedurePayload {
   updatedBy: number;
   updatedAt: Date;
 }
+
+
+
+export interface Response {
+  sectionId: number;
+  sectionName: string | null;
+  subsectionId: number | null;
+  subsectionName: string | null;
+  questionId: number | null;
+  questionText: string | null;
+  responseText: string | null;
+  responseDate: Date | null;
+  responseBoolean: boolean | null;
+  responseNumber: number | null;
+  dropdownResponses: DropdownResponse[];
+  dropdownResponse: DropdownResponse | null;
+};
+
+export interface FormattedResponse {
+  sectionId: number;
+  sectionName: string;
+  subsections: {
+    subsectionId: number | null;
+    subsectionName: string | null;
+    questions: {
+      questionId: number;
+      questionText: string;
+      responseText: string | null;
+      responseDate: Date | null;
+      responseBoolean: boolean | null;
+      responseNumber: number | null;
+      dropdownResponses: DropdownResponse[];
+      dropdownResponse: DropdownResponse | null;
+    }[];
+  }[];
+};
