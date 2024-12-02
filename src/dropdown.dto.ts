@@ -5,42 +5,49 @@ export interface CreateDropdownDto {
 
 export interface UpdateDropdownDto {
   name?: string;
-  is_active?: boolean;
-  updated_by: number;
-  updated_at: Date;
+  isActive?: boolean;
+  updatedBy: number;
+  updatedAt: Date;
   values?: string[];
 }
 
 export interface DropdownDto {
   id: number;
   name: string;
-  is_serverside: boolean;
-  is_active: boolean;
-  created_by: number;
-  updated_by: number;
-  created_at: Date;
-  updated_at: Date;
+  isServerside: boolean;
+  isActive: boolean;
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface DropdownValueDto {
   id: number;
   value: string;
-  dropdown_id: number;
-  is_active: boolean;
-  created_by: number;
-  updated_by: number;
-  created_at: Date;
-  updated_at: Date;
+  dropdownId: number;
+  isActive: boolean;
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface DropdownWithValuesDto {
   id: number;
   name: string;
-  is_serverside: boolean;
-  is_active: boolean;
-  created_by: number;
-  updated_by: number;
-  created_at: Date;
-  updated_at: Date;
+  isServerside: boolean;
+  isActive: boolean;
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
   values: DropdownValueDto[];
+}
+
+export interface AuditFields {
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
 }

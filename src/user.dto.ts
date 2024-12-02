@@ -1,60 +1,89 @@
 export interface UserDto {
   username: string;
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
-  role_id: number;
+  roleId: number;
   isActive?: boolean;
+}
+
+export interface VerifyUserRequest {
+  email: string;
+  code: string;
 }
 
 export interface FullUserDto {
   id: number;
   username: string;
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  is_active: boolean;
+  isActive: boolean;
   isDeleted: boolean;
-  role_id: number;
-  is_two_factor_enabled: boolean;
-  created_by: number;
-  updated_by: number;
-  created_at: Date;
-  updated_at: Date;
+  roleId: number;
+  isTwoFactorEnabled: boolean;
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface ListUserDto {
   id: number;
   username: string;
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   email: string | null;
   isActive: boolean | null;
   isDeleted: boolean | null;
-  role_id: number | null;
-  is_two_factor_enabled: boolean | null;
+  roleId: number | null;
+  isTwoFactorEnabled: boolean | null;
+  twoFactorSecret?: string | null;
 }
 
 export interface UpdateUserDto {
   id: number;
   username: string;
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   email: string | null;
   isActive: boolean | null;
-  role_id: number | null;
-  two_factor_secret: string | null;
-  is_two_factor_enabled: boolean | null;
+  roleId: number | null;
+  twoFactorSecret: string | null;
+  isTwoFactorEnabled: boolean | null;
 }
 
 export interface CreateUserParams {
   username: string;
   email: string;
   password: string;
-  first_name: string;
-  last_name: string;
-  role_id: number;
-  created_by: number;
-  updated_by: number;
+  firstName: string;
+  lastName: string;
+  roleId: number;
+  createdBy: number;
+  updatedBy: number;
+}
+
+export interface LoggedInUser {
+  id: number;
+}
+
+export interface UserLoginRequest {
+  email: string;
+  password: string;
+}
+
+export interface UserSelectFields {
+  email: string;
+  password: string;
+  twoFactorSecret: string | null;
+  isTwoFactorEnabled: boolean | null;
+  id: number;
+  username: string;
+  firstName: string;
+  lastName: string;
+  isActive: boolean | null;
+  isDeleted: boolean | null;
+  roleId: number | null;
 }

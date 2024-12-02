@@ -1,56 +1,56 @@
 interface BaseContactDto {
-  relation_type: string;
-  relation_type_id: number;
-  company_type: string;
-  company_type_id: number;
-  company_name: string;
-  company_display_name?: string | null;
-  company_address?: string | null;
-  company_country_id?: number | null;
-  company_country?: string | null;
-  company_telephone_number?: string | null;
-  company_email?: string | null;
-  company_vat_number?: string | null;
-  title_id?: number | null;
+  relationType: string;
+  relationTypeId: number;
+  companyType: string;
+  companyTypeId: number;
+  companyName: string;
+  companyDisplayName?: string | null;
+  companyAddress?: string | null;
+  companyCountryId?: number | null;
+  companyCountry?: string | null;
+  companyTelephoneNumber?: string | null;
+  companyEmail?: string | null;
+  companyVatNumber?: string | null;
+  titleId?: number | null;
   title?: string | null;
   name?: string | null;
   email?: string | null;
-  first_name?: string | null;
+  firstName?: string | null;
   position?: string | null;
-  department_id?: number | null;
+  departmentId?: number | null;
   department?: string | null;
-  telephone_number?: string | null;
-  manufacturing_licence_exp_date?: Date | null;
-  gmp_exp_date?: Date | null;
-  gdp_exp_date?: Date | null;
-  gmp_territory?: boolean | null;
-  gmp_territory_exp_date?: Date | null;
-  is_active?: boolean;
+  telephoneNumber?: string | null;
+  manufacturingLicenceExpDate?: Date | null;
+  gmpExpDate?: Date | null;
+  gdpExpDate?: Date | null;
+  gmpTerritory?: boolean | null;
+  gmpTerritoryExpDate?: Date | null;
+  isActive?: boolean;
 }
 
 interface BaseContactSiteDto {
-  site_name?: string | null;
-  site_type?: string | null;
-  site_type_id?: number | null;
-  address?: string | null;
-  country?: string | null;
-  country_id?: number | null;
-  telephone_number?: string | null;
-  email?: string | null;
-  vat_number?: string | null;
+  siteName: string;
+  siteType: string;
+  siteTypeId: number;
+  address: string | null;
+  country: string | null;
+  countryId: number | null;
+  telephoneNumber: string | null;
+  email: string | null;
+  vatNumber: string | null;
 }
 
 export interface GeneralInformationDto {
-  relation_type: string;
-  relation_type_id: number;
+  relationType: string;
+  relationTypeId: number;
 }
 
 export interface ContactDto extends BaseContactDto {
   id: number;
-  created_by: number;
-  updated_by: number;
-  created_at: Date;
-  updated_at: Date;
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
   sites?: ContactSiteDto[];
 }
 
@@ -58,12 +58,12 @@ export type CreateContactSiteDto = BaseContactSiteDto;
 
 export interface ContactSiteDto extends BaseContactSiteDto {
   id: number;
-  contact_id: number | null;
-  is_active: boolean;
-  created_by: number;
-  updated_by: number;
-  created_at: Date;
-  updated_at: Date;
+  contactId: number | null;
+  isActive: boolean;
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface ContactWithSitesDto extends ContactDto {
@@ -71,36 +71,36 @@ export interface ContactWithSitesDto extends ContactDto {
 }
 
 export interface CompanyInformationDto {
-  company_type: string;
-  company_type_id: number;
-  company_name: string;
-  company_display_name: string | null;
-  company_address: string | null;
-  company_country_id: number | null;
-  company_country: string | null;
-  company_telephone_number: string | null;
-  company_email: string | null;
-  company_vat_number: string | null;
+  companyType: string;
+  companyTypeId: number;
+  companyName: string;
+  companyDisplayName: string | null;
+  companyAddress: string | null;
+  companyCountryId: number | null;
+  companyCountry: string | null;
+  companyTelephoneNumber: string | null;
+  companyEmail: string | null;
+  companyVatNumber: string | null;
 }
 
 export interface ContactInformationDto {
-  title_id: number | null;
+  titleId: number | null;
   title: string | null;
   name: string | null;
-  first_name: string | null;
+  firstName: string | null;
   position: string | null;
-  department_id: number | null;
+  departmentId: number | null;
   department: string | null;
-  telephone_number: string | null;
+  telephoneNumber: string | null;
   email: string | null;
 }
 
 export interface LicenseInformationDto {
-  manufacturing_licence_exp_date: Date | null;
-  gmp_exp_date: Date | null;
-  gdp_exp_date: Date | null;
-  gmp_territory: boolean | null;
-  gmp_territory_exp_date: Date | null;
+  manufacturingLicenceExpDate: Date | null;
+  gmpExpDate: Date | null;
+  gdpExpDate: Date | null;
+  gmpTerritory: boolean | null;
+  gmpTerritoryExpDate: Date | null;
 }
 
 export interface TransformContactDto {
@@ -114,9 +114,50 @@ export interface TransformContactDto {
 
 export interface ContactAuditTrailDto {
   id: number;
-  contact_id: number;
+  contactId: number;
   action: string;
-  updated_by: number;
-  updated_at: Date;
+  updatedBy: number;
+  updatedAt: Date;
   message: string;
+}
+
+export interface LicenseInformation {
+  manufacturingLicenceExpDate: string | null;
+  gmpExpDate: string | null;
+  gdpExpDate: string | null;
+  gmpTerritory: boolean | null;
+  gmpTerritoryExpDate: string | null;
+}
+
+export interface ContactRequestPayload {
+  generalInformation: GeneralInformationDto;
+  companyInformation: CompanyInformationDto;
+  contactInformation: ContactInformationDto;
+  licenseInformation: LicenseInformation;
+  siteInformation: ContactSiteDto[];
+  isActive?: boolean;
+}
+
+export interface DeleteContactPayload {
+  isDeleted: boolean;
+  isActive: boolean;
+  updatedBy: number;
+  updatedAt: Date;
+}
+
+export interface ContactRequestParam {
+  contactId: string;
+}
+
+export interface ContactRequestQueryParam {
+  limit: string;
+  page: string;
+  searchTerm: string;
+}
+
+export interface AuditFields {
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
 }

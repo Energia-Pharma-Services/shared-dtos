@@ -1,120 +1,165 @@
 interface Timestamps {
-  created_at: Date;
-  updated_at: Date;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 interface UserActions {
-  created_by: number;
-  updated_by: number;
+  createdBy: number;
+  updatedBy: number;
 }
 
 export interface CountryDto {
-  country_name: string;
-  country_name_id: number;
-  eur_price: string | null;
-  fcfa_price: string | null;
+  countryName: string;
+  countryNameId: number;
+  eurPrice: string | null;
+  fcfaPrice: string | null;
 }
 
 export interface ManufacturerDto {
-  manufacturer_id: number;
-  manufacturer_name: string;
+  manufacturerId: number;
+  manufacturerName: string;
 }
 
 export interface ActiveSubstanceManufacturerDto {
-  active_substance_manufacturer_id: number;
-  manufacturer_name: string;
+  activeSubstanceManufacturerId: number;
+  manufacturerName: string;
 }
 
+export interface GeneralInformation {
+  productCode: string;
+  parentProductCode: string;
+  productName: string;
+  activeSubstanceEn: string;
+  activeSubstanceFr: string;
+  productType: string;
+  atcCode: string;
+  parentProductId: number;
+  strength: string | null;
+  pharmaceuticalForm: string | null;
+  remarks: string | null;
+  shelfLife: number | null;
+  manufacturers?: ManufacturerDto[];
+  activeSubstanceManufacturers?: ActiveSubstanceManufacturerDto[];
+  countries: CountryDto[] | [];
+}
+
+export interface PresentationInformation {
+  storageConditions: number | null;
+  storageConditionsAfterOpen: number | null;
+  packagingType: string | null;
+  languagesOnPack: string | null;
+  packSize: string | null;
+  routeOfAdministration: string | null;
+}
 export interface TransformProductDto extends UserActions, Timestamps {
   id: number;
-  generalInformation: {
-    product_code: string;
-    parent_product_code: string;
-    product_name: string;
-    active_substance_en: string;
-    active_substance_fr: string;
-    product_type: string;
-    ATC_code: string;
-    parent_product_id: number;
-    strength: string | null;
-    pharmaceutical_form: string | null;
-    remarks: string | null;
-    shelf_life: number | null;
-    manufacturers?: ManufacturerDto[];
-    active_substance_manufacturers?: ActiveSubstanceManufacturerDto[];
-    countries: CountryDto[] | [];
-  };
+  generalInformation: GeneralInformation;
+  presentationInformation?: PresentationInformation;
+  isActive: boolean;
+  isDeleted: boolean;
+}
 
-  presentationInformation?: {
-    storage_conditions: number | null;
-    storage_conditions_after_open: number | null;
-    packaging_type: string | null;
-    languages_on_pack: string | null;
-    pack_size: string | null;
-    route_of_administration: string | null;
-  };
-  is_active: boolean;
-  is_deleted: boolean;
+export interface RequestBody {
+  generalInformation: GeneralInformation;
+  presentationInformation: PresentationInformation;
 }
 
 export interface ProductMinimalDto extends UserActions, Timestamps {
   id: number;
-  product_code: string;
-  parent_product_id: number;
+  productCode: string;
+  parentProductId: number;
   strength: string | null;
-  pharmaceutical_form: string | null;
+  pharmaceuticalForm: string | null;
   remarks: string | null;
-  shelf_life: number | null;
-  storage_conditions: number | null;
-  storage_conditions_after_open: number | null;
-  packaging_type: string | null;
-  languages_on_pack: string | null;
-  pack_size: string | null;
-  route_of_administration: string | null;
-  is_active: boolean;
-  is_deleted: boolean;
+  shelfLife: number | null;
+  storageConditions: number | null;
+  storageConditionsAfterOpen: number | null;
+  packagingType: string | null;
+  languagesOnPack: string | null;
+  packSize: string | null;
+  routeOfAdministration: string | null;
+  isActive: boolean;
+  isDeleted: boolean;
 }
 
+export interface Product {
+  id: number;
+  productCode: string;
+  parentProductId: number;
+  strength: string | null;
+  pharmaceuticalForm: string | null;
+  remarks: string | null;
+  shelfLife: number | null;
+  storageConditions: number | null;
+  storageConditionsAfterOpen: number | null;
+  packagingType: string | null;
+  languagesOnPack: string | null;
+  packSize: string | null;
+  routeOfAdministration: string | null;
+  isActive: boolean;
+  isDeleted: boolean;
+  createdAt: Date;
+  createdBy: number;
+  updatedAt: Date;
+  updatedBy: number;
+}
+
+export interface ParentProduct {
+  id: number;
+  productCode: string;
+  productName: string;
+  activeSubstanceEn: string;
+  activeSubstanceFr: string;
+  atcCode: string;
+  productType: string;
+  createdAt: Date;
+  createdBy: number;
+  updatedAt: Date;
+  updatedBy: number;
+  isActive: boolean;
+  isDeleted: boolean;
+}
 export interface ProductWithParentProduct {
-  products: {
-    id: number;
-    product_code: string;
-    parent_product_id: number;
-    strength: string | null;
-    pharmaceutical_form: string | null;
-    remarks: string | null;
-    shelf_life: number | null;
-    storage_conditions: number | null;
-    storage_conditions_after_open: number | null;
-    packaging_type: string | null;
-    languages_on_pack: string | null;
-    pack_size: string | null;
-    route_of_administration: string | null;
-    is_active: boolean;
-    is_deleted: boolean;
-  };
-  parent_products: {
-    id: number;
-    product_code: string;
-    product_name: string;
-    active_substance_en: string;
-    active_substance_fr: string;
-    ATC_code: string;
-    product_type: string;
-    created_at: Date;
-    created_by: number;
-    updated_at: Date;
-    updated_by: number;
-    is_active: boolean;
-    is_deleted: boolean;
-  };
+  products: Product;
+  parentProducts: ParentProduct;
 }
 
 export interface ProductAuditTrailDto {
   id: number;
-  product_id: number;
+  productId: number;
   action: string;
-  updated_by: number;
-  updated_at: Date;
+  updatedBy: number;
+  updatedAt: Date;
   message: string;
+}
+
+export interface ProductToUpdate {
+  productCode: string;
+  parentProductId: number;
+  strength: string | null;
+  pharmaceuticalForm: string | null;
+  remarks: string | null;
+  shelfLife: number | null;
+  storageConditions: number | null;
+  storageConditionsAfterOpen: number | null;
+  packagingType: string | null;
+  languagesOnPack: string | null;
+  packSize?: string | null;
+  routeOfAdministration: string | null;
+  updatedBy: number;
+  updatedAt: Date;
+}
+
+export interface AuditFields {
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface DeleteProduct {
+  isDeleted: boolean;
+  isActive: boolean;
+  updatedBy: number;
+  updatedAt: Date;
 }
