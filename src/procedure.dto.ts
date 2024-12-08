@@ -52,6 +52,7 @@ export interface QuestionText {
 export interface Procedure {
   id: number;
   templateId: number;
+  templateName: string | null;
   createdAt: Date;
   updatedAt: Date;
   createdBy: number;
@@ -59,6 +60,7 @@ export interface Procedure {
   isActive: boolean;
   isDeleted: boolean;
   responses: SubmittedResponse[];
+  submittedResponses?: SubmittedResponse[];
 }
 
 export interface FormResponseEntries {
@@ -91,8 +93,6 @@ export interface DeleteProcedurePayload {
   updatedAt: Date;
 }
 
-
-
 export interface Response {
   sectionId: number;
   sectionName: string | null;
@@ -106,7 +106,7 @@ export interface Response {
   responseNumber: number | null;
   dropdownResponses: DropdownResponse[];
   dropdownResponse: DropdownResponse | null;
-};
+}
 
 export interface FormattedResponse {
   sectionId: number;
@@ -125,4 +125,13 @@ export interface FormattedResponse {
       dropdownResponse: DropdownResponse | null;
     }[];
   }[];
-};
+}
+
+export interface ProcedureAuditTrailDto {
+  id: number;
+  procedureId: number;
+  action: string;
+  updatedAt: Date;
+  changes: Record<string, { new: string; old: string }>;
+  updatedBy: string;
+}

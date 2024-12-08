@@ -87,3 +87,12 @@ export interface UserSelectFields {
   isDeleted: boolean | null;
   roleId: number | null;
 }
+
+export interface UserAuditTrail {
+  id: number;
+  userId: number;
+  action: string;
+  updatedAt: Date;
+  changes: Record<string, { new: string; old: string }>;
+  updatedBy: string;
+}
