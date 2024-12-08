@@ -51,3 +51,12 @@ export interface AuditFields {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface DropdownAuditTrail {
+  id: number;
+  dropdownId: number;
+  action: string;
+  updatedAt: Date;
+  changes: Record<string, { new: string; old: string }>;
+  updatedBy: string;
+}

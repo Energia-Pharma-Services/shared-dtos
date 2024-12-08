@@ -128,9 +128,9 @@ export interface ProductAuditTrailDto {
   id: number;
   productId: number;
   action: string;
-  updatedBy: number;
+  updatedBy: string;
   updatedAt: Date;
-  message: string;
+  changes: Record<string, { new: string; old: string }>;
 }
 
 export interface ProductToUpdate {

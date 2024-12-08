@@ -107,3 +107,41 @@ export interface AuditFields {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface FormBuilderAuditTrailDto {
+  id: number;
+  formId: number;
+  action: string;
+  updatedAt: Date;
+  changes: Record<string, { new: string; old: string }>;
+  updatedBy: string;
+}
+
+export interface QuestionChange {
+  id?: { new: number | null; old: number | null };
+  name?: { new: string | null; old: string | null };
+  questionTypeId?: { new: number | null; old: number | null };
+  questionType?: { new: string | null; old: string | null };
+  dropdownId?: { new: number | null; old: number | null };
+  isReadOnly?: { new: boolean; old: boolean };
+  isRequired?: { new: boolean; old: boolean };
+}
+
+export interface SubsectionChange {
+  id?: { new: number | null; old: number | null };
+  subsectionText?: { new: string | null; old: string | null };
+  questions?: { new: QuestionChange[]; old: null };
+}
+
+export interface SectionChange {
+  id?: { new: number | null; old: number | null };
+  sectionText?: { new: string | null; old: string | null };
+  subsections?: SubsectionChange[];
+}
+
+export interface FormChanges {
+  id?: { new: number; old: number | null };
+  isActive?: { new: boolean; old: boolean };
+  name?: { new: string; old: string | null };
+  sections?: SectionChange[];
+}

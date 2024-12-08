@@ -51,6 +51,7 @@ export interface ContactDto extends BaseContactDto {
   updatedBy: number;
   createdAt: Date;
   updatedAt: Date;
+  isActive: boolean;
   sites?: ContactSiteDto[];
 }
 
@@ -110,6 +111,11 @@ export interface TransformContactDto {
   contactInformation: ContactInformationDto;
   licenseInformation: LicenseInformationDto;
   siteInformation: ContactSiteDto[];
+  isActive: boolean;
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface ContactAuditTrailDto {
@@ -160,4 +166,12 @@ export interface AuditFields {
   updatedBy: number;
   createdAt: Date;
   updatedAt: Date;
+}
+export interface ContactAuditTrail {
+  id: number;
+  contactId: number;
+  action: string;
+  updatedAt: Date;
+  changes: Record<string, { new: string; old: string }>;
+  updatedBy: string;
 }

@@ -38,9 +38,9 @@ export interface ParentProductAuditTrailDto {
   id: number;
   parentProductId: number;
   action: string;
-  updatedBy: number;
   updatedAt: Date;
-  message: string;
+  changes: Record<string, { new: string; old: string }>;
+  updatedBy: string;
 }
 
 export interface DeleteProductPayload {
