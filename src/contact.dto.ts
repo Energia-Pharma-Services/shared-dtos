@@ -31,10 +31,10 @@ interface BaseContactDto {
 interface BaseContactSiteDto {
   siteName: string;
   siteType: string;
-  siteTypeId: number;
+  siteTypeId: number | null;
   address: string | null;
   country: string | null;
-  countryId: number | null;
+  countryId?: number | null;
   telephoneNumber: string | null;
   email: string | null;
   vatNumber: string | null;
@@ -57,13 +57,13 @@ export interface ContactDto extends BaseContactDto {
 export type CreateContactSiteDto = BaseContactSiteDto;
 
 export interface ContactSiteDto extends BaseContactSiteDto {
-  id: number;
-  contactId: number | null;
-  isActive: boolean;
-  createdBy: number;
-  updatedBy: number;
-  createdAt: Date;
-  updatedAt: Date;
+  id?: number;
+  contactId?: number | null;
+  isActive?: boolean;
+  createdBy?: number;
+  updatedBy?: number;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export interface ContactWithSitesDto extends ContactDto {

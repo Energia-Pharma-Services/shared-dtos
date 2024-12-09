@@ -35,7 +35,7 @@ export interface FormResponsePayload {
 }
 
 export interface SubmittedResponse
-  extends Omit<FormResponse, 'dropdownResponses'> {
+  extends Omit<FormResponse, "dropdownResponses"> {
   questionText: string | null;
   dropdownResponses: DropdownResponse[];
 }
@@ -91,8 +91,6 @@ export interface DeleteProcedurePayload {
   updatedAt: Date;
 }
 
-
-
 export interface Response {
   sectionId: number;
   sectionName: string | null;
@@ -106,7 +104,7 @@ export interface Response {
   responseNumber: number | null;
   dropdownResponses: DropdownResponse[];
   dropdownResponse: DropdownResponse | null;
-};
+}
 
 export interface FormattedResponse {
   sectionId: number;
@@ -125,4 +123,4 @@ export interface FormattedResponse {
       dropdownResponse: DropdownResponse | null;
     }[];
   }[];
-};
+}

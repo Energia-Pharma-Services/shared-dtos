@@ -10,7 +10,7 @@ interface UserActions {
 
 export interface CountryDto {
   countryName: string;
-  countryNameId: number;
+  countryNameId: number | null;
   eurPrice: string | null;
   fcfaPrice: string | null;
 }
