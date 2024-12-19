@@ -29,14 +29,14 @@ export interface FormResponse {
   procedureId?: number | null;
 }
 
-export interface MilestoneRequest {
+export interface MilestoneResponsePayload {
   id: number;
   responseDate?: Date | null;
   responseCheckbox?: boolean | null;
 }
-export interface PartialMilestoneResponse{
+export interface PartialMilestoneResponse {
   id: number;
-  templateFieldId: number
+  templateFieldId: number;
 }
 export interface MilestoneResponse {
   id: number | null;
@@ -48,7 +48,7 @@ export interface MilestoneResponse {
 }
 export interface FormResponsePayload {
   templateId: number;
-  milestoneResponses?: MilestoneRequest[] | null;
+  milestoneResponses?: MilestoneResponsePayload[] | null;
   responses: FormResponse[];
 }
 
@@ -79,7 +79,7 @@ export interface Procedure {
   isDeleted: boolean;
   responses: SubmittedResponse[];
   submittedResponses?: SubmittedResponse[];
-  milestoneResponses?: MilestoneResponse[]
+  milestoneResponses?: MilestoneResponse[];
 }
 
 export interface FormResponseEntries {
