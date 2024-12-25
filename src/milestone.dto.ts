@@ -5,7 +5,7 @@ export interface CreateMilestoneTemplateDto {
 
 export interface MilestoneTemplateRequest {
   milestoneTemplateName: string;
-  milestoneTemplateFields?: number[];
+  milestones?: number[];
 }
 
 export interface TransformMilestoneTemplateDto {
@@ -18,8 +18,7 @@ export interface TransformMilestoneTemplateDto {
   updatedBy: number;
   isDeleted: boolean;
   templateFields: {
-    id: number | null;
-    masterFieldId: number | null;
+    milestoneId: number | null;
     milestoneText: string | null;
     milestoneType: string | null;
   }[];
@@ -45,6 +44,7 @@ export interface MilestoneTemplateDto {
   updatedBy: number;
   isActive: boolean;
   isDeleted: boolean;
+  milestones: number[];
 }
 
 export interface MilestoneTemplateFieldDto {
@@ -83,14 +83,12 @@ export interface MilestoneTemplateAuditChanges {
   templateName?: { new: string | null; old: string | null };
   templateFields?: {
     old: {
-      id: number | null;
-      masterFieldId: number | null;
+      milestoneId: number | null;
       milestoneText: string | null;
       milestoneType: string | null;
     } | null;
     new: {
-      id: number | null;
-      masterFieldId: number | null;
+      milestoneId: number | null;
       milestoneText: string | null;
       milestoneType: string | null;
     } | null;
@@ -98,8 +96,7 @@ export interface MilestoneTemplateAuditChanges {
 }
 
 export interface MilestoneFields {
-  id: number | null;
-  masterFieldId: number | null;
+  milestoneId: number | null;
   milestoneText: string | null;
   milestoneType: string | null;
 }
