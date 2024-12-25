@@ -5,7 +5,7 @@ export interface AuditFields {
   updatedAt: Date;
 }
 
-export interface DropdownResponseMain {
+export interface DropdownResponse {
   id?: number;
   dropdownId?: number | null;
   dropdownValue: string | null;
@@ -15,7 +15,7 @@ export interface DropdownResponseMain {
   procedureId?: number | null;
 }
 
-export interface FormResponseMain {
+export interface FormResponse {
   id?: number;
   sectionId: number;
   subsectionId: number;
@@ -24,8 +24,8 @@ export interface FormResponseMain {
   responseDate?: Date | null;
   responseBoolean?: boolean | null;
   responseNumber?: number | null;
-  dropdownResponses?: DropdownResponseMain[] | null;
-  dropdownResponse?: DropdownResponseMain | null;
+  dropdownResponses?: DropdownResponse[] | null;
+  dropdownResponse?: DropdownResponse | null;
   procedureId?: number | null;
 }
 
@@ -49,13 +49,13 @@ export interface MilestoneResponse {
 export interface FormResponsePayload {
   templateId: number;
   milestoneResponses?: MilestoneResponsePayload[] | null;
-  responses: FormResponseMain[];
+  responses: FormResponse[];
 }
 
 export interface SubmittedResponse
-  extends Omit<FormResponseMain, 'dropdownResponses'> {
+  extends Omit<FormResponse, 'dropdownResponses'> {
   questionText: string | null;
-  dropdownResponses: DropdownResponseMain[];
+  dropdownResponses: DropdownResponse[];
 }
 
 export interface TransformedResponse {
@@ -67,7 +67,7 @@ export interface QuestionText {
   questionText: string | null;
 }
 
-export interface ProcedureMain {
+export interface Procedure {
   id: number;
   templateId: number;
   templateName: string | null;
@@ -123,8 +123,8 @@ export interface Response {
   responseDate: Date | null;
   responseBoolean: boolean | null;
   responseNumber: number | null;
-  dropdownResponses: DropdownResponseMain[];
-  dropdownResponse: DropdownResponseMain | null;
+  dropdownResponses: DropdownResponse[];
+  dropdownResponse: DropdownResponse | null;
 }
 
 export interface FormattedResponse {
@@ -140,8 +140,8 @@ export interface FormattedResponse {
       responseDate: Date | null;
       responseBoolean: boolean | null;
       responseNumber: number | null;
-      dropdownResponses: DropdownResponseMain[];
-      dropdownResponse: DropdownResponseMain | null;
+      dropdownResponses: DropdownResponse[];
+      dropdownResponse: DropdownResponse | null;
     }[];
   }[];
 }
