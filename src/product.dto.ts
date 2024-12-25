@@ -82,7 +82,7 @@ export interface ProductMinimalDto extends UserActions, Timestamps {
   isDeleted: boolean;
 }
 
-export interface ProductMain {
+export interface Product {
   id: number;
   productCode: string;
   parentProductId: number;
@@ -104,7 +104,7 @@ export interface ProductMain {
   updatedBy: number;
 }
 
-export interface ParentProductMain {
+export interface ParentProduct {
   id: number;
   productCode: string;
   productName: string;
@@ -120,8 +120,8 @@ export interface ParentProductMain {
   isDeleted: boolean;
 }
 export interface ProductWithParentProduct {
-  products: ProductMain;
-  parentProducts: ParentProductMain;
+  products: Product;
+  parentProducts: ParentProduct;
 }
 
 export interface ProductAuditTrailDto {
