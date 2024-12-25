@@ -43,13 +43,13 @@ export interface GeneralFormDto {
   isDeleted: boolean | null;
 }
 
-export interface Section {
+export interface SectionMain {
   id: number;
   sectionText: string;
-  subsections: Subsection[];
+  subsections: SubsectionMain[];
 }
 
-export interface Subsection {
+export interface SubsectionMain {
   id: number;
   subsectionText: string;
   questions: Question[];
@@ -76,7 +76,7 @@ export interface FormRequest {
   updatedBy: number;
   isActive: boolean;
   isDeleted: boolean;
-  sections: Section[];
+  sections: SectionMain[];
 }
 
 export interface FormSelectFields {
