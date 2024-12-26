@@ -30,17 +30,17 @@ export interface FormResponse {
 }
 
 export interface MilestoneResponsePayload {
-  id: number;
+  milestoneId: number;
   responseDate?: Date | null;
   responseCheckbox?: boolean | null;
 }
 export interface PartialMilestoneResponse {
   id: number;
-  templateFieldId: number;
+  milestoneId: number;
 }
 export interface MilestoneResponse {
   id: number | null;
-  masterFieldId: number | null;
+  milestoneId: number | null;
   milestoneText: string | null;
   milestoneType: string | null;
   responseDate?: Date | null;
