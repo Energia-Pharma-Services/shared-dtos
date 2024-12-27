@@ -14,7 +14,27 @@ export interface DropdownResponseMain {
   questionId: number;
   procedureId?: number | null;
 }
+export interface ProcedureDto {
+  id: number;
+  templateName: string | null;
+  templateId: number;
+  createdAt: Date;
+  updatedAt: Date;
+  createdBy: number;
+  updatedBy: number;
+  isActive: boolean;
+  isDeleted: boolean;
+  responses: SubmittedResponse[];
+  milestoneResponses: MilestoneResponse[];
+}
 
+export interface MinimalProcedureDto {
+  id: number;
+  templateId: number;
+  templateName: string | null;
+  responses: SubmittedResponse[];
+  isActive: boolean;
+}
 export interface FormResponseMain {
   id?: number;
   sectionId: number;

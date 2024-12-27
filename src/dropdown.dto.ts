@@ -22,6 +22,18 @@ export interface DropdownDto {
   updatedAt: Date;
 }
 
+export interface TransformedDropdownDto {
+  id: number;
+  name: string;
+  isServerside: boolean;
+  isActive: boolean;
+  isDeleted: boolean;
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
+  values: DropdownValueDto[];
+}
 export interface DropdownValueDto {
   id: number;
   value: string;

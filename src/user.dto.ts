@@ -29,6 +29,16 @@ export interface FullUserDto {
   updatedAt: Date;
 }
 
+export interface MinimalUserDto {
+  id: number;
+  username: string;
+  firstName: string;
+  lastName: string;
+  roleId: number;
+  email: string;
+  isActive: boolean;
+}
+
 export interface ListUserDto {
   id: number;
   username: string;
