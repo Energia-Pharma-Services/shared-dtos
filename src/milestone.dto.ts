@@ -111,28 +111,3 @@ export interface FieldsToInsert {
   milestoneTemplateId: number;
   milestoneId: number;
 }
-
-export interface MilestoneTemplateAuditTrailDto {
-  changes: Record<
-    string,
-    {
-      new: string;
-      old: string;
-    }
-  >;
-  updatedBy: string;
-  id: number;
-  updatedAt: Date;
-  milestoneTemplateId: number;
-  action: string;
-}
-
-export interface MilestoneAuditTrailWithUser {
-  milestoneTemplateId: number;
-  id: number;
-  updatedBy: number;
-  updatedAt: Date;
-  action: string;
-  changes: unknown;
-  username: string | null;
-}
