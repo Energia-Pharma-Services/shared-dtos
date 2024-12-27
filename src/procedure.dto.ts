@@ -11,7 +11,7 @@ export interface DropdownResponseMain {
   dropdownValue: string | null;
   sectionId: number;
   subsectionId: number;
-  questionId: number;
+  formFieldId: number;
   procedureId?: number | null;
 }
 export interface ProcedureDto {
@@ -39,7 +39,7 @@ export interface FormResponseMain {
   id?: number;
   sectionId: number;
   subsectionId: number;
-  questionId: number;
+  formFieldId: number;
   responseText?: string | null;
   responseDate?: Date | null;
   responseBoolean?: boolean | null;
@@ -74,7 +74,7 @@ export interface FormResponsePayload {
 
 export interface SubmittedResponse
   extends Omit<FormResponseMain, 'dropdownResponses'> {
-  questionText: string | null;
+  formFieldText: string | null;
   dropdownResponses: DropdownResponseMain[];
 }
 
@@ -82,9 +82,9 @@ export interface TransformedResponse {
   responses: SubmittedResponse[];
 }
 
-export interface QuestionText {
-  questionId: number;
-  questionText: string | null;
+export interface FormFieldText {
+  formFieldId: number;
+  formFieldText: string | null;
 }
 
 export interface ProcedureMain {
@@ -105,7 +105,7 @@ export interface ProcedureMain {
 export interface FormResponseEntries {
   sectionId: number;
   subsectionId: number;
-  questionId: number;
+  formFieldId: number;
   responseText: string | null;
   responseDate: Date | null;
   responseNumber: number | null;
@@ -137,8 +137,8 @@ export interface Response {
   sectionName: string | null;
   subsectionId: number | null;
   subsectionName: string | null;
-  questionId: number | null;
-  questionText: string | null;
+  formFieldId: number | null;
+  formFieldText: string | null;
   responseText: string | null;
   responseDate: Date | null;
   responseBoolean: boolean | null;
@@ -153,9 +153,9 @@ export interface FormattedResponse {
   subsections: {
     subsectionId: number | null;
     subsectionName: string | null;
-    questions: {
-      questionId: number;
-      questionText: string;
+    formFields: {
+      formFieldId: number;
+      formFieldText: string;
       responseText: string | null;
       responseDate: Date | null;
       responseBoolean: boolean | null;

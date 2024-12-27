@@ -1,8 +1,8 @@
-export interface QuestionDto {
+export interface FormFieldDto {
   id: number | null;
   name: string | null;
-  questionTypeId: number | null;
-  questionType: string | null;
+  formFieldTypeId: number | null;
+  formFieldType: string | null;
   dropdownId: number | null;
   isReadOnly: boolean;
   isRequired: boolean;
@@ -11,7 +11,7 @@ export interface QuestionDto {
 export interface SubsectionDto {
   id: number | null;
   subsectionText: string | null;
-  questions: QuestionDto[];
+  formFields: FormFieldDto[];
 }
 
 export interface SectionDto {
@@ -52,19 +52,19 @@ export interface SectionMain {
 export interface SubsectionMain {
   id: number;
   subsectionText: string;
-  questions: Question[];
+  formFields: FormField[];
 }
 
-export interface Question {
+export interface FormField {
   id: number;
   name: string;
-  questionTypeId: number | null;
-  questionType: string | null;
+  formFieldTypeId: number | null;
+  formFieldType: string | null;
   dropdownId: number | null;
   isReadOnly: boolean;
   isRequired: boolean;
   include?: boolean;
-  questionId?: number;
+  formFieldId?: number;
 }
 
 export interface FormRequest {
@@ -92,13 +92,13 @@ export interface FormSelectFields {
   sectionText: string | null;
   subsectionId: number | null;
   subsectionText: string | null;
-  questionId: number | null;
-  questionName: string | null;
+  formFieldId: number | null;
+  formFieldName: string | null;
   dropdownId: number | null;
   isReadOnly: boolean | null;
   isRequired: boolean | null;
-  questionTypeId: number | null;
-  questionType: string | null;
+  formFieldTypeId: number | null;
+  formFieldType: string | null;
 }
 
 export interface AuditFields {
@@ -117,11 +117,11 @@ export interface FormBuilderAuditTrailDto {
   updatedBy: string;
 }
 
-export interface QuestionChange {
+export interface FormFieldChange {
   id?: { new: number | null; old: number | null };
   name?: { new: string | null; old: string | null };
-  questionTypeId?: { new: number | null; old: number | null };
-  questionType?: { new: string | null; old: string | null };
+  formFieldTypeId?: { new: number | null; old: number | null };
+  formFieldType?: { new: string | null; old: string | null };
   dropdownId?: { new: number | null; old: number | null };
   isReadOnly?: { new: boolean; old: boolean };
   isRequired?: { new: boolean; old: boolean };
@@ -130,7 +130,7 @@ export interface QuestionChange {
 export interface SubsectionChange {
   id?: { new: number | null; old: number | null };
   subsectionText?: { new: string | null; old: string | null };
-  questions?: { new: QuestionChange[]; old: null };
+  formFields?: { new: FormFieldChange[]; old: null };
 }
 
 export interface SectionChange {

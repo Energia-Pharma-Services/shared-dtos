@@ -61,7 +61,7 @@ export interface MilestoneTemplateFieldDto {
 export interface MilestoneDto {
   id: number;
   milestoneText: string;
-  questionType: number;
+  formFieldType: number;
   createdAt: Date;
   createdBy: number;
   updatedAt: Date;
