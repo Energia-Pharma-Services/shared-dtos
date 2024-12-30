@@ -33,6 +33,8 @@ export const auditTrailEntities = {
   dropdown: 'Dropdown',
   formBuilder: 'FormBuilder',
   milestone: 'Milestone',
-  document: 'Document',
   user: 'User',
 } as const;
+
+export type AuditTrailEntites =
+  (typeof auditTrailEntities)[keyof typeof auditTrailEntities];
