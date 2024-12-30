@@ -67,6 +67,10 @@ export interface FormField {
   formFieldId?: number;
 }
 
+export interface FormRequestDto{
+  name: string;
+  formFieldIds: number[]
+}
 export interface FormRequest {
   id: number;
   name: string;
