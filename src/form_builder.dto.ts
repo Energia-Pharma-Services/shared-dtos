@@ -67,11 +67,11 @@ export interface FormField {
   formFieldId?: number;
 }
 
-export interface FormRequestDto{
+export interface FormRequestDto {
   name: string;
-  formFieldIds: number[]
+  formFieldIds: number[];
 }
-export interface FormRequest {
+export interface FormResultDto {
   id: number;
   name: string;
   createdAt: Date;
@@ -80,7 +80,7 @@ export interface FormRequest {
   updatedBy: number;
   isActive: boolean;
   isDeleted: boolean;
-  sections: SectionMain[];
+  formFieldIds: number[];
 }
 
 export interface FormSelectFields {
