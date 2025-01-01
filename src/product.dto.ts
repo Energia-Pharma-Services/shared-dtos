@@ -163,3 +163,35 @@ export interface DeleteProduct {
   updatedBy: number;
   updatedAt: Date;
 }
+
+export interface ManufacturerEntries {
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
+  productId: number;
+  manufacturerId: number;
+  manufacturerName: string;
+}
+
+export interface ActiveSubstanceEntries {
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
+  productId: number;
+  activeSubstanceManufacturerId: number;
+  manufacturerName: string;
+}
+
+export interface CountryEntries {
+  createdBy: number;
+  updatedBy: number;
+  createdAt: Date;
+  updatedAt: Date;
+  productId: number;
+  countryName: string;
+  countryNameId: number;
+  eurPrice: string | null;
+  fcfaPrice: string | null;
+}
