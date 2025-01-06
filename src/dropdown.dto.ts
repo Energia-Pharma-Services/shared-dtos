@@ -16,6 +16,7 @@ export interface DropdownDto {
   name: string;
   isServerside: boolean;
   isActive: boolean;
+  isDeleted: boolean;
   createdBy: number;
   updatedBy: number;
   createdAt: Date;
