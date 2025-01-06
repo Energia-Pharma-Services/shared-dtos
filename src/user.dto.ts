@@ -20,8 +20,8 @@ export interface FullUserDto {
   lastName: string;
   email: string;
   isActive: boolean;
-  isDeleted: boolean;
-  roleId: number;
+  isDeleted: boolean | null;
+  roleId: number | null;
   isTwoFactorEnabled: boolean;
   createdBy: number;
   updatedBy: number;
