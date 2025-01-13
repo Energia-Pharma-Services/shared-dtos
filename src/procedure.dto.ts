@@ -40,10 +40,8 @@ export interface FormResponseMain {
   sectionId: number;
   subsectionId: number;
   formFieldId: number;
-  responseText?: string | null;
-  responseDate?: Date | null;
-  responseBoolean?: boolean | null;
-  responseNumber?: number | null;
+  response?: string | null;
+  responseType?: number | null;
   dropdownResponses?: DropdownResponseMain[] | null;
   dropdownResponse?: DropdownResponseMain | null;
   procedureId?: number | null;
@@ -106,10 +104,8 @@ export interface FormResponseEntries {
   sectionId: number;
   subsectionId: number;
   formFieldId: number;
-  responseText: string | null;
-  responseDate: Date | null;
-  responseNumber: number | null;
-  responseBoolean: boolean | null;
+  response: string | null;
+  responseType: number | null;
   procedureId: number;
   createdAt: Date;
   updatedAt: Date;
@@ -139,10 +135,8 @@ export interface Response {
   subsectionName: string | null;
   formFieldId: number | null;
   formFieldText: string | null;
-  responseText: string | null;
-  responseDate: Date | null;
-  responseBoolean: boolean | null;
-  responseNumber: number | null;
+  response: string | null;
+  responseType: number | null;
   dropdownResponses: DropdownResponseMain[];
   dropdownResponse: DropdownResponseMain | null;
 }
@@ -156,10 +150,8 @@ export interface FormattedResponse {
     formFields: {
       formFieldId: number;
       formFieldText: string;
-      responseText: string | null;
-      responseDate: Date | null;
-      responseBoolean: boolean | null;
-      responseNumber: number | null;
+      response: string | null;
+      responseType: number | null;
       dropdownResponses: DropdownResponseMain[];
       dropdownResponse: DropdownResponseMain | null;
     }[];
