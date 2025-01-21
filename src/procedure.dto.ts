@@ -39,6 +39,7 @@ export interface FormResponseMain {
   id?: number;
   sectionId: number;
   subsectionId: number;
+  subsectionName: string;
   formFieldId: number;
   response?: string | null;
   responseType?: number | null;
