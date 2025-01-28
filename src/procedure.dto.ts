@@ -41,7 +41,7 @@ export interface FormResponseMain {
   subsectionId: number;
   subsectionName: string;
   formFieldId: number;
-  response?: string | null;
+  response?: string | null; // TODO: Add FormField Types instead of any
   responseType?: number | null;
   dropdownResponses?: DropdownResponseMain[] | null;
   dropdownResponse?: DropdownResponseMain | null;
@@ -50,8 +50,7 @@ export interface FormResponseMain {
 
 export interface MilestoneResponsePayload {
   milestoneId: number;
-  responseDate?: Date | null;
-  responseCheckbox?: boolean | null;
+  response: any | null; // TODO: Add FormField Types instead of any
 }
 export interface PartialMilestoneResponse {
   id: number;
@@ -62,8 +61,8 @@ export interface MilestoneResponse {
   milestoneId: number | null;
   milestoneText: string | null;
   milestoneType: string | null;
-  responseDate?: Date | null;
-  responseCheckbox?: boolean | null;
+  response: any | null; // TODO: Add FormField Types instead of any
+  fieldType: string | null;
 }
 export interface FormResponsePayload {
   templateId: number;
