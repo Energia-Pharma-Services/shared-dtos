@@ -63,6 +63,8 @@ export interface MilestoneResponse {
   milestoneType: string | null;
   response: any | null; // TODO: Add FormField Types instead of any
   fieldType: string | null;
+  updatedBy: number;
+  updatedAt: Date;
 }
 export interface FormResponsePayload {
   templateId: number;
