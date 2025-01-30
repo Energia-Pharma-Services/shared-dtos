@@ -31,8 +31,8 @@ export const auditTrailEntities = {
   procedure: 'Procedure',
   contact: 'Contact',
   dropdown: 'Dropdown',
-  formBuilder: 'FormBuilder',
-  milestone: 'Milestone',
+  formBuilder: 'FormBuilder', // Procedure Templates
+  milestone: 'Milestone', // Milestone Templates
   user: 'User',
 } as const;
 
