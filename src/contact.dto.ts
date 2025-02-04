@@ -175,3 +175,17 @@ export interface ContactAuditTrail {
   changes: Record<string, { new: string; old: string }>;
   updatedBy: string;
 }
+
+export const companyTypes = {
+  MAHOLDER: 'MA Holder',
+  MFP: 'Manucturer Finished Product',
+  BR: 'Batch Releaser',
+  MAS: 'Manufacturer Active substance',
+  MOH: 'Ministery of Health',
+  LED: 'Local entity Distribution',
+  LEP: 'Local entity Promotion',
+  LTR: 'LTR',
+} as const;
+
+export type CompanyTypeEntites =
+  (typeof companyTypes)[keyof typeof companyTypes];
