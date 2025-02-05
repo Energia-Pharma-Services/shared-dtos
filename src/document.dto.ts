@@ -14,8 +14,8 @@ export interface DocumentDto {
   entityId: number;
   isActive: boolean;
   isDeleted: boolean;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
   fileName: string;

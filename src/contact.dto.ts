@@ -47,8 +47,8 @@ export interface GeneralInformationDto {
 
 export interface ContactDto extends BaseContactDto {
   id: number;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
   isActive: boolean;
@@ -61,8 +61,8 @@ export interface ContactSiteDto extends BaseContactSiteDto {
   id: number;
   contactId: number | null;
   isActive: boolean;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -112,8 +112,8 @@ export interface TransformContactDto {
   licenseInformation: LicenseInformationDto;
   siteInformation: ContactSiteDto[];
   isActive: boolean;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -147,7 +147,7 @@ export interface ContactRequestPayload {
 export interface DeleteContactPayload {
   isDeleted: boolean;
   isActive: boolean;
-  updatedBy: number;
+  updatedBy: string;
   updatedAt: Date;
 }
 
@@ -162,8 +162,8 @@ export interface ContactRequestQueryParam {
 }
 
 export interface AuditFields {
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
 }

@@ -18,7 +18,7 @@ export interface AuditTrailWithUser {
   entityId: number;
   entityType: string;
   id: number;
-  updatedBy: number;
+  updatedBy: string;
   updatedAt: Date;
   action: string;
   changes: unknown;
