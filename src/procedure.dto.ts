@@ -17,6 +17,7 @@ export interface DropdownResponseMain {
 export interface ProcedureDto {
   id: number;
   templateName: string | null;
+  genericName: string;
   templateId: number;
   createdAt: Date;
   updatedAt: Date;
@@ -30,6 +31,7 @@ export interface ProcedureDto {
 
 export interface MinimalProcedureDto {
   id: number;
+  genericName: string;
   templateId: number;
   templateName: string | null;
   responses: SubmittedResponse[];
@@ -67,6 +69,7 @@ export interface MilestoneResponse {
   updatedAt: Date;
 }
 export interface FormResponsePayload {
+  genericName: string;
   templateId: number;
   milestoneResponses?: MilestoneResponsePayload[] | null;
   responses: FormResponseMain[];
@@ -118,6 +121,7 @@ export interface FormResponseEntries {
 }
 
 export interface UpdateProcedurePayload {
+  genericName: string;
   templateId: number;
   updatedAt: Date;
   updatedBy: number;
