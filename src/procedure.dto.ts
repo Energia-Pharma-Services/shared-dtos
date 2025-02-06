@@ -168,3 +168,13 @@ export interface ProcedureAuditTrailDto {
   changes: Record<string, { new: string; old: string }>;
   updatedBy: string;
 }
+
+export const procedureTypes = {
+  NEW: 'New',
+  VARIATION: 'Variation',
+  RENEWAL: 'Renewal',
+  REREGISTERATION: 'Re-registration'
+} as const;
+
+export type ProcedureTypeEntites =
+  (typeof procedureTypes)[keyof typeof procedureTypes];
