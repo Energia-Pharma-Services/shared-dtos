@@ -44,8 +44,8 @@ export interface GeneralInformation {
 }
 
 export interface PresentationInformation {
-  storageConditions: number | null;
-  storageConditionsAfterOpen: number | null;
+  storageConditions: string | null;
+  storageConditionsAfterOpen: string | null;
   packagingType: string | null;
   languagesOnPack: string | null;
   packSize: string | null;
@@ -72,8 +72,8 @@ export interface ProductMinimalDto extends UserActions, Timestamps {
   pharmaceuticalForm: string | null;
   remarks: string | null;
   shelfLife: number | null;
-  storageConditions: number | null;
-  storageConditionsAfterOpen: number | null;
+  storageConditions: string | null;
+  storageConditionsAfterOpen: string | null;
   packagingType: string | null;
   languagesOnPack: string | null;
   packSize: string | null;
@@ -90,8 +90,8 @@ export interface ProductMain {
   pharmaceuticalForm: string | null;
   remarks: string | null;
   shelfLife: number | null;
-  storageConditions: number | null;
-  storageConditionsAfterOpen: number | null;
+  storageConditions: string | null;
+  storageConditionsAfterOpen: string | null;
   packagingType: string | null;
   languagesOnPack: string | null;
   packSize: string | null;
@@ -140,8 +140,8 @@ export interface ProductToUpdate {
   pharmaceuticalForm: string | null;
   remarks: string | null;
   shelfLife: number | null;
-  storageConditions: number | null;
-  storageConditionsAfterOpen: number | null;
+  storageConditions: string | null;
+  storageConditionsAfterOpen: string | null;
   packagingType: string | null;
   languagesOnPack: string | null;
   packSize?: string | null;
