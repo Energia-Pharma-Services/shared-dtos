@@ -189,3 +189,37 @@ export const companyTypes = {
 
 export type CompanyTypeEntites =
   (typeof companyTypes)[keyof typeof companyTypes];
+
+export const relationshipTypes = {
+  PARTNER: 'Partner',
+  MANUFACTURER: 'Manufacturer',
+  MOH: 'Ministery of Health',
+  LOCAL_ENTITY: 'Local entity',
+  LTR: 'LTR'
+} as const;
+
+export type RelationshipTypeEntites =
+  (typeof relationshipTypes)[keyof typeof relationshipTypes];
+
+export const departmentTypes = {
+  REGULATORY_AFFAIRS: 'Regulatory Affairs',
+  QUALITY: 'Quality',
+  BUSINESS_DEVELOPMENT: 'Business Development',
+  PURCHASE: 'Purchase',
+  OTHER: 'Other',
+} as const;
+
+export type DepartmentTypeEntities =
+  (typeof departmentTypes)[keyof typeof departmentTypes];
+
+export const siteTypes = {
+  MANUFACTURING_SITE: 'Manufacturing site',
+  WAREHOUSE: 'Warehouse',
+  RND: 'R&D',
+  HQ: 'HQ',
+  ADMINISTRATION_OFFICE: 'Administrative office',
+  LABORATORY: 'Laboratory',
+} as const;
+
+export type SiteTypeEntities =
+  (typeof siteTypes)[keyof typeof siteTypes];

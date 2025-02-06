@@ -195,3 +195,15 @@ export interface CountryEntries {
   eurPrice: string | null;
   fcfaPrice: string | null;
 }
+
+export const productTypes = {
+  OTC: 'OTC',
+  FOOD_SUP: 'Food supplement',
+  PHARMA_PRODCUT: 'Pharmaceutical product',
+  PHARMA_LISTE1: 'Pharma Liste 1',
+  PHARMA_LISTE2: 'Pharma Liste 2',
+  Medical_Device: 'Medical device',
+} as const;
+
+export type ProductTypeEntites =
+  (typeof productTypes)[keyof typeof productTypes];

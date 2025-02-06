@@ -93,6 +93,7 @@ export interface FormFieldText {
 export interface ProcedureMain {
   id: number;
   templateId: number;
+  genericName: string;
   templateName: string | null;
   createdAt: Date;
   updatedAt: Date;
@@ -177,8 +178,37 @@ export const procedureTypes = {
   NEW: 'New',
   VARIATION: 'Variation',
   RENEWAL: 'Renewal',
-  REREGISTERATION: 'Re-registration'
+  RE_REGISTERATION: 'Re-registration'
 } as const;
 
 export type ProcedureTypeEntites =
   (typeof procedureTypes)[keyof typeof procedureTypes];
+
+
+export const authorisationStatus = {
+  PLANNED: 'Planned',
+  PENDING: 'Pending',
+  QUERIES: 'Queries',
+  VALID: 'Valid',
+  REJECTED: 'Rejected',
+  WITHDRAWN: 'Withdrawn',
+  NOT_RENEWED: 'Not renewed'
+} as const;
+
+export type AuthorisationStatusEntites =
+  (typeof authorisationStatus)[keyof typeof authorisationStatus];
+
+export const variationReason = {
+  PRICE_REDUCTION: 'Price reduction',
+  PRICE_INCREASE: 'Price increase',
+  ADMINISTRATIVE: 'Administrative',
+  MANUFACTURER_API: 'Manufacturer API',
+  MANUFACTURER_FP: 'Manufacturer FP',
+  PACKAGING_AW: 'Packaging / AW',
+  SHELF_LIFE: 'Shelf-life',
+  LEAFLET_SMPC: 'Leaflet / SmPC',
+  OTHER: 'other',
+} as const;
+
+export type VariationReasonEntites =
+  (typeof variationReason)[keyof typeof variationReason];
