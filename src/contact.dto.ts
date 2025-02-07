@@ -176,9 +176,10 @@ export interface ContactAuditTrail {
   updatedBy: string;
 }
 
+/* eslint-disable @typescript-eslint/naming-convention */
 export const companyTypes = {
   MAHOLDER: 'MA Holder',
-  MFP: 'Manucturer Finished Product',
+  MFP: 'Manufacturer Finished Product',
   BR: 'Batch Releaser',
   MAS: 'Manufacturer Active substance',
   MOH: 'Ministery of Health',
@@ -189,6 +190,11 @@ export const companyTypes = {
 
 export type CompanyTypeEntites =
   (typeof companyTypes)[keyof typeof companyTypes];
+
+export type CompanyTypeEntitesForProducts = Extract<
+  CompanyTypeEntites,
+  'Manufacturer Finished Product' | 'Manufacturer Active substance' | 'Batch Releaser'
+>;
 
 export const relationshipTypes = {
   PARTNER: 'Partner',
@@ -223,3 +229,5 @@ export const siteTypes = {
 
 export type SiteTypeEntities =
   (typeof siteTypes)[keyof typeof siteTypes];
+
+/* eslint-enable @typescript-eslint/naming-convention */

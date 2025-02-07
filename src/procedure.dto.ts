@@ -52,6 +52,7 @@ export interface FormResponseMain {
 
 export interface MilestoneResponsePayload {
   milestoneId: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   response: any | null; // TODO: Add FormField Types instead of any
 }
 export interface PartialMilestoneResponse {
@@ -63,6 +64,7 @@ export interface MilestoneResponse {
   milestoneId: number | null;
   milestoneText: string | null;
   milestoneType: string | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   response: any | null; // TODO: Add FormField Types instead of any
   fieldType: string | null;
   updatedBy: number;
@@ -174,6 +176,7 @@ export interface ProcedureAuditTrailDto {
   updatedBy: string;
 }
 
+/* eslint-disable @typescript-eslint/naming-convention */
 export const procedureTypes = {
   NEW: 'New',
   VARIATION: 'Variation',
@@ -212,3 +215,5 @@ export const variationReason = {
 
 export type VariationReasonEntites =
   (typeof variationReason)[keyof typeof variationReason];
+
+/* eslint-enable @typescript-eslint/naming-convention */

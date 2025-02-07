@@ -1,3 +1,5 @@
+import { CompanyTypeEntitesForProducts } from "./contact.dto";
+
 interface Timestamps {
   createdAt: Date;
   updatedAt: Date;
@@ -16,13 +18,9 @@ export interface CountryDto {
 }
 
 export interface ManufacturerDto {
-  manufacturerId: number;
-  manufacturerName: string;
-}
-
-export interface ActiveSubstanceManufacturerDto {
-  activeSubstanceManufacturerId: number;
-  manufacturerName: string;
+  id: number;
+  name: string;
+  type: CompanyTypeEntitesForProducts;
 }
 
 export interface GeneralInformation {
@@ -33,14 +31,13 @@ export interface GeneralInformation {
   activeSubstanceFr: string;
   productType: string;
   atcCode: string;
-  maHolder: string;
+  maHolder: string | null;
   parentProductId: number;
   strength: string | null;
   pharmaceuticalForm: string | null;
   remarks: string | null;
   shelfLife: number | null;
   manufacturers?: ManufacturerDto[];
-  activeSubstanceManufacturers?: ActiveSubstanceManufacturerDto[];
   countries: CountryDto[] | [];
 }
 
@@ -90,6 +87,7 @@ export interface ProductMain {
   strength: string | null;
   pharmaceuticalForm: string | null;
   remarks: string | null;
+  maHolder: string | null;
   shelfLife: number | null;
   storageConditions: string | null;
   storageConditionsAfterOpen: string | null;
@@ -197,6 +195,7 @@ export interface CountryEntries {
   fcfaPrice: string | null;
 }
 
+/* eslint-disable @typescript-eslint/naming-convention */
 export const productTypes = {
   OTC: 'OTC',
   FOOD_SUP: 'Food supplement',
@@ -208,3 +207,5 @@ export const productTypes = {
 
 export type ProductTypeEntites =
   (typeof productTypes)[keyof typeof productTypes];
+
+/* eslint-enable @typescript-eslint/naming-convention */
