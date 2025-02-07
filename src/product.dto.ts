@@ -33,6 +33,7 @@ export interface GeneralInformation {
   activeSubstanceFr: string;
   productType: string;
   atcCode: string;
+  maHolder: string;
   parentProductId: number;
   strength: string | null;
   pharmaceuticalForm: string | null;
