@@ -139,6 +139,7 @@ export interface ProductToUpdate {
   pharmaceuticalForm: string | null;
   remarks: string | null;
   shelfLife: number | null;
+  maHolder: string | null;
   storageConditions: string | null;
   storageConditionsAfterOpen: string | null;
   packagingType: string | null;
