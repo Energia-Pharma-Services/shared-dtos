@@ -174,16 +174,6 @@ export interface ManufacturerEntries {
   manufacturerName: string;
 }
 
-export interface ActiveSubstanceEntries {
-  createdBy: number;
-  updatedBy: number;
-  createdAt: Date;
-  updatedAt: Date;
-  productId: number;
-  activeSubstanceManufacturerId: number;
-  manufacturerName: string;
-}
-
 export interface CountryEntries {
   createdBy: number;
   updatedBy: number;
