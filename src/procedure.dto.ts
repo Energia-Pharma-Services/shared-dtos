@@ -17,6 +17,7 @@ export interface DropdownResponseMain {
 export interface ProcedureDto {
   id: number;
   templateName: string | null;
+  genericName: string;
   templateId: number;
   createdAt: Date;
   updatedAt: Date;
@@ -26,10 +27,12 @@ export interface ProcedureDto {
   isDeleted: boolean;
   responses: SubmittedResponse[];
   milestoneResponses: MilestoneResponse[];
+  teamMembers: string[] | null
 }
 
 export interface MinimalProcedureDto {
   id: number;
+  genericName: string;
   templateId: number;
   templateName: string | null;
   responses: SubmittedResponse[];
@@ -50,6 +53,7 @@ export interface FormResponseMain {
 
 export interface MilestoneResponsePayload {
   milestoneId: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   response: any | null; // TODO: Add FormField Types instead of any
 }
 export interface PartialMilestoneResponse {
@@ -61,15 +65,18 @@ export interface MilestoneResponse {
   milestoneId: number | null;
   milestoneText: string | null;
   milestoneType: string | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   response: any | null; // TODO: Add FormField Types instead of any
   fieldType: string | null;
   updatedBy: string;
   updatedAt: Date;
 }
 export interface FormResponsePayload {
+  genericName: string;
   templateId: number;
   milestoneResponses?: MilestoneResponsePayload[] | null;
   responses: FormResponseMain[];
+  teamMembers: string[];
 }
 
 export interface SubmittedResponse
@@ -90,6 +97,7 @@ export interface FormFieldText {
 export interface ProcedureMain {
   id: number;
   templateId: number;
+  genericName: string;
   templateName: string | null;
   createdAt: Date;
   updatedAt: Date;
@@ -118,7 +126,9 @@ export interface FormResponseEntries {
 }
 
 export interface UpdateProcedurePayload {
+  genericName: string;
   templateId: number;
+  teamMembers: string[];
   updatedAt: Date;
   updatedBy: string;
 }
@@ -168,3 +178,45 @@ export interface ProcedureAuditTrailDto {
   changes: Record<string, { new: string; old: string }>;
   updatedBy: string;
 }
+
+/* eslint-disable @typescript-eslint/naming-convention */
+export const procedureTypes = {
+  NEW: 'New',
+  VARIATION: 'Variation',
+  RENEWAL: 'Renewal',
+  RE_REGISTERATION: 'Re-registration'
+} as const;
+
+export type ProcedureTypeEntites =
+  (typeof procedureTypes)[keyof typeof procedureTypes];
+
+
+export const authorisationStatus = {
+  PLANNED: 'Planned',
+  PENDING: 'Pending',
+  QUERIES: 'Queries',
+  VALID: 'Valid',
+  REJECTED: 'Rejected',
+  WITHDRAWN: 'Withdrawn',
+  NOT_RENEWED: 'Not renewed'
+} as const;
+
+export type AuthorisationStatusEntites =
+  (typeof authorisationStatus)[keyof typeof authorisationStatus];
+
+export const variationReason = {
+  PRICE_REDUCTION: 'Price reduction',
+  PRICE_INCREASE: 'Price increase',
+  ADMINISTRATIVE: 'Administrative',
+  MANUFACTURER_API: 'Manufacturer API',
+  MANUFACTURER_FP: 'Manufacturer FP',
+  PACKAGING_AW: 'Packaging / AW',
+  SHELF_LIFE: 'Shelf-life',
+  LEAFLET_SMPC: 'Leaflet / SmPC',
+  OTHER: 'other',
+} as const;
+
+export type VariationReasonEntites =
+  (typeof variationReason)[keyof typeof variationReason];
+
+/* eslint-enable @typescript-eslint/naming-convention */

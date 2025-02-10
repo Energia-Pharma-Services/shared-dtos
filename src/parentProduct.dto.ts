@@ -1,8 +1,7 @@
 export interface CreateParentProductRequest {
   productCode: string;
   productName: string;
-  activeSubstanceEn: string;
-  activeSubstanceFr: string;
+  activeSubstance: string;
   atcCode: string;
   productType: string;
 }
@@ -10,8 +9,7 @@ export interface CreateParentProductRequest {
 export interface UpdateParentProductDto {
   productCode?: string;
   productName?: string;
-  activeSubstanceEn?: string;
-  activeSubstanceFr?: string;
+  activeSubstance?: string;
   atcCode?: string;
   productType?: string;
   isActive?: boolean;
@@ -22,8 +20,7 @@ export interface ParentProductDto {
   id: number;
   productCode: string;
   productName: string;
-  activeSubstanceEn: string;
-  activeSubstanceFr: string;
+  activeSubstance: string;
   atcCode: string;
   productType: string;
   createdAt: Date;

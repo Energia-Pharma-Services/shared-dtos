@@ -1,3 +1,5 @@
+import { CompanyTypeEntitesForProducts } from "./contact.dto";
+
 interface Timestamps {
   createdAt: Date;
   updatedAt: Date;
@@ -16,36 +18,31 @@ export interface CountryDto {
 }
 
 export interface ManufacturerDto {
-  manufacturerId: number;
-  manufacturerName: string;
-}
-
-export interface ActiveSubstanceManufacturerDto {
-  activeSubstanceManufacturerId: number;
-  manufacturerName: string;
+  id: number;
+  name: string;
+  type: CompanyTypeEntitesForProducts;
 }
 
 export interface GeneralInformation {
   productCode: string;
   parentProductCode: string;
   productName: string;
-  activeSubstanceEn: string;
-  activeSubstanceFr: string;
+  activeSubstance: string;
   productType: string;
   atcCode: string;
+  maHolder: string | null;
   parentProductId: number;
   strength: string | null;
   pharmaceuticalForm: string | null;
   remarks: string | null;
   shelfLife: number | null;
   manufacturers?: ManufacturerDto[];
-  activeSubstanceManufacturers?: ActiveSubstanceManufacturerDto[];
   countries: CountryDto[] | [];
 }
 
 export interface PresentationInformation {
-  storageConditions: number | null;
-  storageConditionsAfterOpen: number | null;
+  storageConditions: string | null;
+  storageConditionsAfterOpen: string | null;
   packagingType: string | null;
   languagesOnPack: string | null;
   packSize: string | null;
@@ -72,8 +69,8 @@ export interface ProductMinimalDto extends UserActions, Timestamps {
   pharmaceuticalForm: string | null;
   remarks: string | null;
   shelfLife: number | null;
-  storageConditions: number | null;
-  storageConditionsAfterOpen: number | null;
+  storageConditions: string | null;
+  storageConditionsAfterOpen: string | null;
   packagingType: string | null;
   languagesOnPack: string | null;
   packSize: string | null;
@@ -89,9 +86,10 @@ export interface ProductMain {
   strength: string | null;
   pharmaceuticalForm: string | null;
   remarks: string | null;
+  maHolder: string | null;
   shelfLife: number | null;
-  storageConditions: number | null;
-  storageConditionsAfterOpen: number | null;
+  storageConditions: string | null;
+  storageConditionsAfterOpen: string | null;
   packagingType: string | null;
   languagesOnPack: string | null;
   packSize: string | null;
@@ -108,8 +106,7 @@ export interface ParentProductMain {
   id: number;
   productCode: string;
   productName: string;
-  activeSubstanceEn: string;
-  activeSubstanceFr: string;
+  activeSubstance: string;
   atcCode: string;
   productType: string;
   createdAt: Date;
@@ -140,8 +137,9 @@ export interface ProductToUpdate {
   pharmaceuticalForm: string | null;
   remarks: string | null;
   shelfLife: number | null;
-  storageConditions: number | null;
-  storageConditionsAfterOpen: number | null;
+  maHolder: string | null;
+  storageConditions: string | null;
+  storageConditionsAfterOpen: string | null;
   packagingType: string | null;
   languagesOnPack: string | null;
   packSize?: string | null;
@@ -174,16 +172,6 @@ export interface ManufacturerEntries {
   manufacturerName: string;
 }
 
-export interface ActiveSubstanceEntries {
-  createdBy: number;
-  updatedBy: number;
-  createdAt: Date;
-  updatedAt: Date;
-  productId: number;
-  activeSubstanceManufacturerId: number;
-  manufacturerName: string;
-}
-
 export interface CountryEntries {
   createdBy: number;
   updatedBy: number;
@@ -195,3 +183,18 @@ export interface CountryEntries {
   eurPrice: string | null;
   fcfaPrice: string | null;
 }
+
+/* eslint-disable @typescript-eslint/naming-convention */
+export const productTypes = {
+  OTC: 'OTC',
+  FOOD_SUP: 'Food supplement',
+  PHARMA_PRODCUT: 'Pharmaceutical product',
+  PHARMA_LISTE1: 'Pharma Liste 1',
+  PHARMA_LISTE2: 'Pharma Liste 2',
+  Medical_Device: 'Medical device',
+} as const;
+
+export type ProductTypeEntites =
+  (typeof productTypes)[keyof typeof productTypes];
+
+/* eslint-enable @typescript-eslint/naming-convention */

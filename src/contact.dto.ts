@@ -176,9 +176,10 @@ export interface ContactAuditTrail {
   updatedBy: string;
 }
 
+/* eslint-disable @typescript-eslint/naming-convention */
 export const companyTypes = {
   MAHOLDER: 'MA Holder',
-  MFP: 'Manucturer Finished Product',
+  MFP: 'Manufacturer Finished Product',
   BR: 'Batch Releaser',
   MAS: 'Manufacturer Active substance',
   MOH: 'Ministery of Health',
@@ -189,3 +190,46 @@ export const companyTypes = {
 
 export type CompanyTypeEntites =
   (typeof companyTypes)[keyof typeof companyTypes];
+
+
+export type CompanyTypeEntitesForProducts = Extract<
+  CompanyTypeEntites,
+  'Manufacturer Finished Product' | 'Manufacturer Active substance' | 'Batch Releaser'
+>;
+
+export const relationshipTypes = {
+  PARTNER: 'Partner',
+  MANUFACTURER: 'Manufacturer',
+  MOH: 'Ministery of Health',
+  LOCAL_ENTITY: 'Local entity',
+  LTR: 'LTR'
+} as const;
+
+export type RelationshipTypeEntites =
+  (typeof relationshipTypes)[keyof typeof relationshipTypes];
+
+export const departmentTypes = {
+  REGULATORY_AFFAIRS: 'Regulatory Affairs',
+  QUALITY: 'Quality',
+  BUSINESS_DEVELOPMENT: 'Business Development',
+  PURCHASE: 'Purchase',
+  OTHER: 'Other',
+} as const;
+
+export type DepartmentTypeEntities =
+  (typeof departmentTypes)[keyof typeof departmentTypes];
+
+export const siteTypes = {
+  MANUFACTURING_SITE: 'Manufacturing site',
+  WAREHOUSE: 'Warehouse',
+  RND: 'R&D',
+  HQ: 'HQ',
+  ADMINISTRATION_OFFICE: 'Administrative office',
+  LABORATORY: 'Laboratory',
+} as const;
+
+export type SiteTypeEntities =
+  (typeof siteTypes)[keyof typeof siteTypes];
+
+/* eslint-enable @typescript-eslint/naming-convention */
+
