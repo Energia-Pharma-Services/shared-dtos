@@ -27,6 +27,7 @@ export interface ProcedureDto {
   isDeleted: boolean;
   responses: SubmittedResponse[];
   milestoneResponses: MilestoneResponse[];
+  teamMembers: string[] | null
 }
 
 export interface MinimalProcedureDto {
@@ -75,6 +76,7 @@ export interface FormResponsePayload {
   templateId: number;
   milestoneResponses?: MilestoneResponsePayload[] | null;
   responses: FormResponseMain[];
+  teamMembers: string[];
 }
 
 export interface SubmittedResponse
@@ -126,6 +128,7 @@ export interface FormResponseEntries {
 export interface UpdateProcedurePayload {
   genericName: string;
   templateId: number;
+  teamMembers: string[];
   updatedAt: Date;
   updatedBy: number;
 }
