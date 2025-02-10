@@ -25,8 +25,8 @@ export interface FormDto {
   name: string;
   createdAt: Date;
   updatedAt: Date;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   isActive: boolean;
   isDeleted: boolean;
   sections: SectionDto[];
@@ -36,9 +36,9 @@ export interface GeneralFormDto {
   id: number;
   name: string;
   createdAt: Date | null;
-  createdBy: number;
+  createdBy: string;
   updatedAt: Date | null;
-  updatedBy: number;
+  updatedBy: string;
   isActive: boolean | null;
   isDeleted: boolean | null;
 }
@@ -76,8 +76,8 @@ export interface FormResultDto {
   name: string;
   createdAt: Date;
   updatedAt: Date;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   isActive: boolean;
   isDeleted: boolean;
   formFieldIds: number[];
@@ -88,8 +88,8 @@ export interface FormSelectFields {
   formName: string;
   formCreatedAt: Date;
   formUpdatedAt: Date;
-  formCreatedBy: number;
-  formUpdatedBy: number;
+  formCreatedBy: string;
+  formUpdatedBy: string;
   formIsActive: boolean;
   formIsDeleted: boolean;
   sectionId: number | null;
@@ -106,8 +106,8 @@ export interface FormSelectFields {
 }
 
 export interface AuditFields {
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
 }

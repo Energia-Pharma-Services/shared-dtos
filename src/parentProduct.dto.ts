@@ -24,9 +24,9 @@ export interface ParentProductDto {
   atcCode: string;
   productType: string;
   createdAt: Date;
-  createdBy: number;
+  createdBy: string;
   updatedAt: Date;
-  updatedBy: number;
+  updatedBy: string;
   isActive: boolean;
   isDeleted: boolean;
 }
@@ -42,7 +42,7 @@ export interface ParentProductAuditTrailDto {
 
 export interface DeleteProductPayload {
   isDeleted: boolean;
-  updatedBy: number;
+  updatedBy: string;
   updatedAt: Date;
   isActive: boolean;
 }

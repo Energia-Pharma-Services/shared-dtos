@@ -13,9 +13,9 @@ export interface TransformMilestoneTemplateDto {
   templateName: string;
   isActive: boolean;
   createdAt: Date;
-  createdBy: number;
+  createdBy: string;
   updatedAt: Date;
-  updatedBy: number;
+  updatedBy: string;
   isDeleted: boolean;
   templateFields: {
     milestoneId: number | null;
@@ -39,9 +39,9 @@ export interface MilestoneTemplateDto {
   id: number;
   milestoneTemplateName: string;
   createdAt: Date;
-  createdBy: number;
+  createdBy: string;
   updatedAt: Date;
-  updatedBy: number;
+  updatedBy: string;
   isActive: boolean;
   isDeleted: boolean;
   milestones: number[];
@@ -51,9 +51,9 @@ export interface MilestoneTemplateFieldDto {
   milestoneId: number;
   milestoneTemplateId: number;
   createdAt: Date;
-  createdBy: number;
+  createdBy: string;
   updatedAt: Date;
-  updatedBy: number;
+  updatedBy: string;
   isActive: boolean;
   isDeleted: boolean;
 }
@@ -63,18 +63,18 @@ export interface MilestoneDto {
   milestoneText: string;
   formFieldType: number;
   createdAt: Date;
-  createdBy: number;
+  createdBy: string;
   updatedAt: Date;
-  updatedBy: number;
+  updatedBy: string;
   isActive: boolean;
   isDeleted: boolean;
 }
 
 export interface AuditFields {
   createdAt: Date;
-  createdBy: number;
+  createdBy: string;
   updatedAt: Date;
-  updatedBy: number;
+  updatedBy: string;
   isActive: boolean;
   isDeleted: boolean;
 }
@@ -103,9 +103,9 @@ export interface MilestoneFields {
 
 export interface FieldsToInsert {
   createdAt: Date;
-  createdBy: number;
+  createdBy: string;
   updatedAt: Date;
-  updatedBy: number;
+  updatedBy: string;
   isActive: boolean;
   isDeleted: boolean;
   milestoneTemplateId: number;

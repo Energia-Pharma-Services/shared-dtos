@@ -23,8 +23,8 @@ export interface FullUserDto {
   isDeleted: boolean | null;
   roleId: number | null;
   isTwoFactorEnabled: boolean;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -71,12 +71,13 @@ export interface CreateUserParams {
   firstName: string;
   lastName: string;
   roleId: number;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
 }
 
 export interface LoggedInUser {
   id: number;
+  username: string;
 }
 
 export interface UserLoginRequest {

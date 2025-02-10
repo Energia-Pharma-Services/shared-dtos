@@ -6,7 +6,7 @@ export interface CreateDropdownDto {
 export interface UpdateDropdownDto {
   name?: string;
   isActive?: boolean;
-  updatedBy: number;
+  updatedBy: string;
   updatedAt: Date;
   values?: string[];
 }
@@ -17,8 +17,8 @@ export interface DropdownDto {
   isServerside: boolean;
   isActive: boolean;
   isDeleted: boolean;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -29,8 +29,8 @@ export interface TransformedDropdownDto {
   isServerside: boolean;
   isActive: boolean;
   isDeleted: boolean;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
   values: DropdownValueDto[];
@@ -40,8 +40,8 @@ export interface DropdownValueDto {
   value: string;
   dropdownId: number;
   isActive: boolean;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -51,16 +51,16 @@ export interface DropdownWithValuesDto {
   name: string;
   isServerside: boolean;
   isActive: boolean;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
   values: DropdownValueDto[];
 }
 
 export interface AuditFields {
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
 }

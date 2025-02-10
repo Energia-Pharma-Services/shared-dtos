@@ -1,6 +1,6 @@
 export interface AuditFields {
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -21,8 +21,8 @@ export interface ProcedureDto {
   templateId: number;
   createdAt: Date;
   updatedAt: Date;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   isActive: boolean;
   isDeleted: boolean;
   responses: SubmittedResponse[];
@@ -68,7 +68,7 @@ export interface MilestoneResponse {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   response: any | null; // TODO: Add FormField Types instead of any
   fieldType: string | null;
-  updatedBy: number;
+  updatedBy: string;
   updatedAt: Date;
 }
 export interface FormResponsePayload {
@@ -101,8 +101,8 @@ export interface ProcedureMain {
   templateName: string | null;
   createdAt: Date;
   updatedAt: Date;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   isActive: boolean;
   isDeleted: boolean;
   responses: SubmittedResponse[];
@@ -119,8 +119,8 @@ export interface FormResponseEntries {
   procedureId: number;
   createdAt: Date;
   updatedAt: Date;
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   isActive: boolean;
   isDeleted: boolean;
 }
@@ -130,13 +130,13 @@ export interface UpdateProcedurePayload {
   templateId: number;
   teamMembers: string[];
   updatedAt: Date;
-  updatedBy: number;
+  updatedBy: string;
 }
 
 export interface DeleteProcedurePayload {
   isDeleted: boolean;
   isActive: boolean;
-  updatedBy: number;
+  updatedBy: string;
   updatedAt: Date;
 }
 

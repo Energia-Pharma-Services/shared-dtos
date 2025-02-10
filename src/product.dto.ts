@@ -6,8 +6,8 @@ interface Timestamps {
 }
 
 interface UserActions {
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
 }
 
 export interface CountryDto {
@@ -97,9 +97,9 @@ export interface ProductMain {
   isActive: boolean;
   isDeleted: boolean;
   createdAt: Date;
-  createdBy: number;
+  createdBy: string;
   updatedAt: Date;
-  updatedBy: number;
+  updatedBy: string;
 }
 
 export interface ParentProductMain {
@@ -110,9 +110,9 @@ export interface ParentProductMain {
   atcCode: string;
   productType: string;
   createdAt: Date;
-  createdBy: number;
+  createdBy: string;
   updatedAt: Date;
-  updatedBy: number;
+  updatedBy: string;
   isActive: boolean;
   isDeleted: boolean;
 }
@@ -144,13 +144,13 @@ export interface ProductToUpdate {
   languagesOnPack: string | null;
   packSize?: string | null;
   routeOfAdministration: string | null;
-  updatedBy: number;
+  updatedBy: string;
   updatedAt: Date;
 }
 
 export interface AuditFields {
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -158,7 +158,7 @@ export interface AuditFields {
 export interface DeleteProduct {
   isDeleted: boolean;
   isActive: boolean;
-  updatedBy: number;
+  updatedBy: string;
   updatedAt: Date;
 }
 
