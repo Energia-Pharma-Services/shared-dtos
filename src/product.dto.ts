@@ -27,8 +27,7 @@ export interface GeneralInformation {
   productCode: string;
   parentProductCode: string;
   productName: string;
-  activeSubstanceEn: string;
-  activeSubstanceFr: string;
+  activeSubstance: string;
   productType: string;
   atcCode: string;
   maHolder: string | null;
@@ -107,8 +106,7 @@ export interface ParentProductMain {
   id: number;
   productCode: string;
   productName: string;
-  activeSubstanceEn: string;
-  activeSubstanceFr: string;
+  activeSubstance: string;
   atcCode: string;
   productType: string;
   createdAt: Date;
