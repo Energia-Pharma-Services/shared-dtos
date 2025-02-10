@@ -191,10 +191,11 @@ export const companyTypes = {
 export type CompanyTypeEntites =
   (typeof companyTypes)[keyof typeof companyTypes];
 
-
 export type CompanyTypeEntitesForProducts = Extract<
   CompanyTypeEntites,
-  'Manufacturer Finished Product' | 'Manufacturer Active substance' | 'Batch Releaser'
+  | 'Manufacturer Finished Product'
+  | 'Manufacturer Active substance'
+  | 'Batch Releaser'
 >;
 
 export const relationshipTypes = {
@@ -202,7 +203,7 @@ export const relationshipTypes = {
   MANUFACTURER: 'Manufacturer',
   MOH: 'Ministery of Health',
   LOCAL_ENTITY: 'Local entity',
-  LTR: 'LTR'
+  LTR: 'LTR',
 } as const;
 
 export type RelationshipTypeEntites =
@@ -228,8 +229,6 @@ export const siteTypes = {
   LABORATORY: 'Laboratory',
 } as const;
 
-export type SiteTypeEntities =
-  (typeof siteTypes)[keyof typeof siteTypes];
+export type SiteTypeEntities = (typeof siteTypes)[keyof typeof siteTypes];
 
 /* eslint-enable @typescript-eslint/naming-convention */
-

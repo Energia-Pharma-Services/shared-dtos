@@ -27,7 +27,7 @@ export interface ProcedureDto {
   isDeleted: boolean;
   responses: SubmittedResponse[];
   milestoneResponses: MilestoneResponse[];
-  teamMembers: string[] | null
+  teamMembers?: string[] | null;
 }
 
 export interface MinimalProcedureDto {
@@ -76,7 +76,7 @@ export interface FormResponsePayload {
   templateId: number;
   milestoneResponses?: MilestoneResponsePayload[] | null;
   responses: FormResponseMain[];
-  teamMembers: string[];
+  teamMembers?: string[];
 }
 
 export interface SubmittedResponse
@@ -128,7 +128,7 @@ export interface FormResponseEntries {
 export interface UpdateProcedurePayload {
   genericName: string;
   templateId: number;
-  teamMembers: string[];
+  teamMembers?: string[];
   updatedAt: Date;
   updatedBy: string;
 }
@@ -184,12 +184,11 @@ export const procedureTypes = {
   NEW: 'New',
   VARIATION: 'Variation',
   RENEWAL: 'Renewal',
-  RE_REGISTERATION: 'Re-registration'
+  RE_REGISTERATION: 'Re-registration',
 } as const;
 
 export type ProcedureTypeEntites =
   (typeof procedureTypes)[keyof typeof procedureTypes];
-
 
 export const authorisationStatus = {
   PLANNED: 'Planned',
@@ -198,7 +197,7 @@ export const authorisationStatus = {
   VALID: 'Valid',
   REJECTED: 'Rejected',
   WITHDRAWN: 'Withdrawn',
-  NOT_RENEWED: 'Not renewed'
+  NOT_RENEWED: 'Not renewed',
 } as const;
 
 export type AuthorisationStatusEntites =
