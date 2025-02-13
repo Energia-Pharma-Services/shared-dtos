@@ -1,23 +1,18 @@
 interface BaseContactDto {
   relationType: string;
-  relationTypeId: number;
   companyType: string;
-  companyTypeId: number;
   companyName: string;
   companyDisplayName?: string | null;
   companyAddress?: string | null;
-  companyCountryId?: number | null;
   companyCountry?: string | null;
   companyTelephoneNumber?: string | null;
   companyEmail?: string | null;
   companyVatNumber?: string | null;
-  titleId?: number | null;
   title?: string | null;
   name?: string | null;
   email?: string | null;
   firstName?: string | null;
   position?: string | null;
-  departmentId?: number | null;
   department?: string | null;
   telephoneNumber?: string | null;
   manufacturingLicenceExpDate?: Date | null;
@@ -31,10 +26,8 @@ interface BaseContactDto {
 interface BaseContactSiteDto {
   siteName: string;
   siteType: string;
-  siteTypeId: number;
   address: string | null;
   country: string | null;
-  countryId: number | null;
   telephoneNumber: string | null;
   email: string | null;
   vatNumber: string | null;
@@ -42,7 +35,6 @@ interface BaseContactSiteDto {
 
 export interface GeneralInformationDto {
   relationType: string;
-  relationTypeId: number;
 }
 
 export interface ContactDto extends BaseContactDto {
@@ -73,11 +65,9 @@ export interface ContactWithSitesDto extends ContactDto {
 
 export interface CompanyInformationDto {
   companyType: string;
-  companyTypeId: number;
   companyName: string;
   companyDisplayName: string | null;
   companyAddress: string | null;
-  companyCountryId: number | null;
   companyCountry: string | null;
   companyTelephoneNumber: string | null;
   companyEmail: string | null;
@@ -85,12 +75,10 @@ export interface CompanyInformationDto {
 }
 
 export interface ContactInformationDto {
-  titleId: number | null;
   title: string | null;
   name: string | null;
   firstName: string | null;
   position: string | null;
-  departmentId: number | null;
   department: string | null;
   telephoneNumber: string | null;
   email: string | null;
