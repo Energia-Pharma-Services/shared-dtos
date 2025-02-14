@@ -78,6 +78,8 @@ export interface CreateUserParams {
 export interface LoggedInUser {
   id: number;
   username: string;
+  role: string;
+  permissions: string[];
 }
 
 export interface UserLoginRequest {
