@@ -1,4 +1,4 @@
-import { CompanyTypeEntitesForProducts } from "./contact.dto";
+import { CompanyTypeEntitesForProducts } from './contact.dto';
 
 interface Timestamps {
   createdAt: Date;
@@ -27,7 +27,7 @@ export interface GeneralInformation {
   productCode: string;
   parentProductCode: string;
   productName: string;
-  activeSubstance: string;
+  activeSubstance: string[];
   productType: string;
   atcCode: string;
   maHolder: string | null;
@@ -106,7 +106,7 @@ export interface ParentProductMain {
   id: number;
   productCode: string;
   productName: string;
-  activeSubstance: string;
+  activeSubstance: string[];
   atcCode: string;
   productType: string;
   createdAt: Date;
