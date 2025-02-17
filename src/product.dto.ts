@@ -12,6 +12,7 @@ interface UserActions {
 
 export interface CountryDto {
   countryName: string;
+  countryAbbr: string; // Country abbreviation (e.g. CM for Cameroon)
   eurPrice: string | null;
   fcfaPrice: string | null;
 }
