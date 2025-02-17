@@ -12,7 +12,6 @@ interface UserActions {
 
 export interface CountryDto {
   countryName: string;
-  countryNameId: number;
   eurPrice: string | null;
   fcfaPrice: string | null;
 }
@@ -179,7 +178,6 @@ export interface CountryEntries {
   updatedAt: Date;
   productId: number;
   countryName: string;
-  countryNameId: number;
   eurPrice: string | null;
   fcfaPrice: string | null;
 }
