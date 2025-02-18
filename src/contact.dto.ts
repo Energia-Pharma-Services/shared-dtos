@@ -59,8 +59,9 @@ export interface ContactSiteDto extends BaseContactSiteDto {
   updatedAt: Date;
 }
 
-export interface ContactWithSitesDto extends ContactDto {
+export interface ContactWithSitesAndLicensesDto extends ContactDto {
   sites: ContactSiteDto[];
+  countryLicenses: CountryLicenseDto[];
 }
 
 export interface CompanyInformationDto {
@@ -88,8 +89,8 @@ export interface LicenseInformationDto {
   manufacturingLicenceExpDate: Date | null;
   gmpExpDate: Date | null;
   gdpExpDate: Date | null;
-  gmpTerritory: boolean | null;
   gmpTerritoryExpDate: Date | null;
+  countryLicenses: CountryLicenseDto[];
 }
 
 export interface TransformContactDto {
@@ -119,8 +120,8 @@ export interface LicenseInformation {
   manufacturingLicenceExpDate: string | null;
   gmpExpDate: string | null;
   gdpExpDate: string | null;
-  gmpTerritory: boolean | null;
   gmpTerritoryExpDate: string | null;
+  countryLicenses: CountryLicenseDto[];
 }
 
 export interface ContactRequestPayload {
@@ -162,6 +163,11 @@ export interface ContactAuditTrail {
   updatedAt: Date;
   changes: Record<string, { new: string; old: string }>;
   updatedBy: string;
+}
+
+export interface CountryLicenseDto {
+  countryName: string;
+  gmpExpDate: Date;
 }
 
 /* eslint-disable @typescript-eslint/naming-convention */
