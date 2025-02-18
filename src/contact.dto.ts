@@ -1,6 +1,6 @@
 interface BaseContactDto {
   relationType: string;
-  companyType: string;
+  companyType: string[];
   companyName: string;
   companyDisplayName?: string | null;
   companyAddress?: string | null;
@@ -65,7 +65,7 @@ export interface ContactWithSitesAndLicensesDto extends ContactDto {
 }
 
 export interface CompanyInformationDto {
-  companyType: string;
+  companyType: string[];
   companyName: string;
   companyDisplayName: string | null;
   companyAddress: string | null;
