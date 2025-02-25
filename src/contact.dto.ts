@@ -165,7 +165,9 @@ export interface ContactAuditTrail {
   updatedBy: string;
 }
 
-export interface CountryLicenseDto {
+export interface CountryLicenseDto extends AuditFields {
+  id?: number;
+  contactId: number;
   countryName: string;
   gmpExpDate: Date;
 }
