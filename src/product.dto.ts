@@ -173,8 +173,8 @@ export interface ManufacturerEntries {
 }
 
 export interface CountryEntries {
-  createdBy: number;
-  updatedBy: number;
+  createdBy: string;
+  updatedBy: string;
   createdAt: Date;
   updatedAt: Date;
   productId: number;
