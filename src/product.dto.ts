@@ -38,6 +38,7 @@ export interface GeneralInformation {
   shelfLife: number | null;
   manufacturers?: ManufacturerDto[];
   countries: CountryDto[] | [];
+  maCountryOfOrigin?: number | null;
 }
 
 export interface PresentationInformation {
