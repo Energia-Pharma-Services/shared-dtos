@@ -1,6 +1,5 @@
 export interface NotificationDto {
   id: number;
-  message: string;
   entityId: number;
   entityType: string;
   username: string;
