@@ -169,7 +169,7 @@ export interface CountryLicenseDto extends AuditFields {
   id?: number;
   contactId: number;
   countryName: string;
-  gmpExpDate: Date;
+  gmpExpDate: Date | null;
 }
 
 /* eslint-disable @typescript-eslint/naming-convention */
