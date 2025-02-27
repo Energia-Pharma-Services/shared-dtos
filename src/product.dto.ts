@@ -89,6 +89,7 @@ export interface ProductMain {
   remarks: string | null;
   maHolder: string | null;
   shelfLife: number | null;
+  maCountryOfOrigin: number | null;
   storageConditions: string | null;
   storageConditionsAfterOpen: string | null;
   packagingType: string | null;
@@ -145,6 +146,7 @@ export interface ProductToUpdate {
   languagesOnPack: string | null;
   packSize?: string | null;
   routeOfAdministration: string | null;
+  maCountryOfOrigin?: number | null;
   updatedBy: string;
   updatedAt: Date;
 }
