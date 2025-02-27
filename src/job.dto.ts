@@ -3,13 +3,14 @@ export interface JobDto {
     interval: string | null;
     triggerDate: Date | null;
     fieldName: string;
-    procedureId: number;
+    entityId: number;
+    entityType: string;
     createdAt: Date;
     updatedAt: Date;
 }
 
 export type CreateJobDto =
-    Pick<JobDto, 'interval' | 'triggerDate' | 'fieldName' | 'procedureId'>
+    Pick<JobDto, 'interval' | 'triggerDate' | 'fieldName' | 'entityId' | 'entityType'>
 
 export type UpdateJobDto = Partial<CreateJobDto>;
 
