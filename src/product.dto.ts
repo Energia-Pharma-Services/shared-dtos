@@ -38,7 +38,8 @@ export interface GeneralInformation {
   shelfLife: number | null;
   manufacturers?: ManufacturerDto[];
   countries: CountryDto[] | [];
-  maCountryOfOrigin?: number | null;
+  maCountryOfOriginDoc?: number | null;
+  maCountryOfOrigin?: string | null;
 }
 
 export interface PresentationInformation {
@@ -89,7 +90,8 @@ export interface ProductMain {
   remarks: string | null;
   maHolder: string | null;
   shelfLife: number | null;
-  maCountryOfOrigin: number | null;
+  maCountryOfOriginDoc: number | null;
+  maCountryOfOrigin: string | null;
   storageConditions: string | null;
   storageConditionsAfterOpen: string | null;
   packagingType: string | null;
@@ -146,7 +148,8 @@ export interface ProductToUpdate {
   languagesOnPack: string | null;
   packSize?: string | null;
   routeOfAdministration: string | null;
-  maCountryOfOrigin?: number | null;
+  maCountryOfOriginDoc?: number | null;
+  maCountryOfOrigin?: string | null;
   updatedBy: string;
   updatedAt: Date;
 }
