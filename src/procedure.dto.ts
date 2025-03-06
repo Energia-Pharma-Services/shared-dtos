@@ -129,6 +129,7 @@ export interface FormResponseEntries {
 export interface UpdateProcedurePayload {
   genericName: string;
   templateId: number;
+  milestoneTemplateId: number;
   teamMembers?: string[];
   updatedAt: Date;
   updatedBy: string;
