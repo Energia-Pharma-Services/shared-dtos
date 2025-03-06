@@ -74,6 +74,7 @@ export interface MilestoneResponse {
 export interface FormResponsePayload {
   genericName: string;
   templateId: number;
+  milestoneTemplateId: number;
   milestoneResponses?: MilestoneResponsePayload[] | null;
   responses: FormResponseMain[];
   teamMembers?: string[];
