@@ -21,7 +21,7 @@ export interface ManufacturerDto {
   id: number;
   name: string;
   type: CompanyTypeEntitesForProducts;
-  activeSubstance?: string;
+  activeSubstance?: string | null;
 }
 
 export interface GeneralInformation {
