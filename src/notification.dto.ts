@@ -5,6 +5,9 @@ export interface NotificationDto {
   username: string;
   status: string;
   fieldName: string;
+  productCode?: string | null;
+  procedureCountry?: string | null;
+  companyDisplayName?: string | null;
   createdAt: Date;
   updatedAt: Date;
 }
