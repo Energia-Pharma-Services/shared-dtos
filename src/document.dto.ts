@@ -21,3 +21,10 @@ export interface DocumentDto {
   fileName: string;
   filePath: string;
 }
+
+export interface TemplatesDto {
+  fileName: string;
+  filePath: string;
+  size: number;
+  lastModified: Date;
+}

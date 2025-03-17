@@ -220,4 +220,52 @@ export const variationReason = {
 export type VariationReasonEntites =
   (typeof variationReason)[keyof typeof variationReason];
 
+  
+export interface DocumentTemplatePlaceholdersKeys {
+    generic_name: string;
+    country: string;
+    product_code: string;
+    product_type: string;
+    ma_holder: string;
+    product_name: string;
+    pharmaceutical_form: string;
+    active_substance: string;
+    atc_code: string;
+    strength: string;
+    packaging_type: string;
+    pack_size: string;
+    route_of_administration: string;
+    storage_conditions: string;
+    shelf_life: string;
+    product_eur_price: string;
+    product_fcfa_price: string;
+    manufacturer_finished_product: string;
+    // MA Holder Contact Details
+    ma_holder_company_name: string;
+    ma_holder_telephone: string;
+    ma_holder_email: string;
+    ma_holder_address: string;
+    ma_holder_country: string;
+    ma_holder_contact_name: string;
+    ma_holder_contact_position: string;
+    ma_holder_contact_email: string;
+  
+    // Ministry of Health Contact Details
+    ministry_of_health_company_name: string;
+    ministry_of_health_address: string;
+    ministry_of_health_country: string;
+  
+    // LTR Contact Details
+    ltr_company_name: string;
+    ltr_company_address: string;
+    ltr_company_telephone: string;
+    ltr_company_country: string;
+    ltr_contact_name: string;
+    ltr_contact_position: string;
+  }
+  
+
+
+
+
 /* eslint-enable @typescript-eslint/naming-convention */
