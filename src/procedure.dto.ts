@@ -246,6 +246,7 @@ export interface DocumentTemplatePlaceholdersKeys {
     ma_holder_email: string;
     ma_holder_address: string;
     ma_holder_country: string;
+    ma_holder_website: string;
     ma_holder_contact_name: string;
     ma_holder_contact_position: string;
     ma_holder_contact_email: string;

@@ -5,6 +5,7 @@ interface BaseContactDto {
   companyDisplayName?: string | null;
   companyAddress?: string | null;
   companyCountry?: string | null;
+  companyWebsite?: string | null;
   companyTelephoneNumber?: string | null;
   companyEmail?: string | null;
   companyVatNumber?: string | null;
@@ -70,6 +71,7 @@ export interface CompanyInformationDto {
   companyDisplayName: string | null;
   companyAddress: string | null;
   companyCountry: string | null;
+  companyWebsite: string | null;
   companyTelephoneNumber: string | null;
   companyEmail: string | null;
   companyVatNumber: string | null;
