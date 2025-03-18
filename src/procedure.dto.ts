@@ -263,6 +263,8 @@ export interface DocumentTemplatePlaceholdersKeys {
     ltr_company_country: string;
     ltr_contact_name: string;
     ltr_contact_position: string;
+
+    current_date: string
   }
   
 
