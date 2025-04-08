@@ -281,6 +281,12 @@ export interface DocumentTemplatePlaceholdersKeys {
   current_date: string
 }
 
+export interface ProcedureFilterParams {
+  authorisationStatus?: string[];
+  teamMembers?: string[];
+  procedureType?: string;
+  productCode?: string;
+}
 
 
 
