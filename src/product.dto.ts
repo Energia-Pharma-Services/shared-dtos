@@ -190,6 +190,16 @@ export interface CountryEntries {
   fcfaPrice: string | null;
 }
 
+export interface ProductFilterParams {
+  'generalInformation.productCode'?: string;
+  'generalInformation.productName'?: string;
+  'generalInformation.parentProductCode'?: string;
+  'generalInformation.strength'?: string;
+  'generalInformation.maHolder'?: string;
+  'generalInformation.pharmaceuticalForm'?: string;
+  'generalInformation.manufacturers'?: string[];
+}
+
 /* eslint-disable @typescript-eslint/naming-convention */
 export const productTypes = {
   OTC: 'OTC',

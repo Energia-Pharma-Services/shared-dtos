@@ -46,3 +46,11 @@ export interface DeleteProductPayload {
   updatedAt: Date;
   isActive: boolean;
 }
+
+export interface ParentProductFilterParams {
+  productCode?: string;
+  productName?: string;
+  activeSubstance?: string;
+  atcCode?: string;
+  productType?: string;
+}

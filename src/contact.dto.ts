@@ -230,3 +230,11 @@ export const siteTypes = {
 export type SiteTypeEntities = (typeof siteTypes)[keyof typeof siteTypes];
 
 /* eslint-enable @typescript-eslint/naming-convention */
+
+export interface ContactFilterParams {
+  'companyInformation.companyName'?: string;
+  'companyInformation.companyType'?: string[];
+  'generalInformation.relationType'?: string[];
+  'companyInformation.companyEmail'?: string;
+  'contactInformation.name'?: string;
+}
