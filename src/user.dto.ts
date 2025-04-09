@@ -78,7 +78,7 @@ export interface CreateUserParams {
 export interface LoggedInUser {
   id: number;
   username: string;
-  role: string;
+  roles: string[];
   permissions: string[];
 }
 
