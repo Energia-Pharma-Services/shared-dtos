@@ -180,7 +180,7 @@ export const companyTypes = {
   MFP: 'Manufacturer Finished Product',
   BR: 'Batch Releaser',
   MAS: 'Manufacturer Active substance',
-  MOH: 'Ministery of Health',
+  MOH: 'Ministry of Health',
   LED: 'Local entity Distribution',
   LEP: 'Local entity Promotion',
   LTR: 'LTR',
@@ -199,7 +199,7 @@ export type CompanyTypeEntitesForProducts = Extract<
 export const relationshipTypes = {
   PARTNER: 'Partner',
   MANUFACTURER: 'Manufacturer',
-  MOH: 'Ministery of Health',
+  MOH: 'Ministry of Health',
   LOCAL_ENTITY: 'Local entity',
   LTR: 'LTR',
 } as const;
