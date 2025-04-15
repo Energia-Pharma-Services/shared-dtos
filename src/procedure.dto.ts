@@ -284,46 +284,18 @@ export interface DocumentTemplatePlaceholdersKeys {
 export interface ProcedureFilterParams {
   authorisationStatus?: string[];
   teamMembers?: string[];
+  country?: string[];
   procedureType?: string;
   productCode?: string;
 }
 
-
-export interface ProcedureRoleStats {
-  label: string;
-  value: number;
-}
-
-export interface ProcedureStatusStats {
-  label: string;
-  value: number;
-}
-
-export interface ProcedureKpiStats {
-  completed: number;
-  overdue: number;
-  total: number;
-}
-
-export interface RecentActivityItem {
-  message: string;
-  procedureCode: string;
-  country: string;
-  actionType?: string;
-}
-
-export interface RecentVisitItem {
-  procedureCode: string;
-  country: string;
-  visitedAt: string;
-}
-
-export interface DashboardDto {
-  kpiStats: ProcedureKpiStats;
-  openProceduresByRole: ProcedureRoleStats[];
-  proceduresByStatus: ProcedureStatusStats[];
-  recentActivities: RecentActivityItem[];
-  recentVisitedProcedures: RecentVisitItem[];
+export interface RecentlyVisitedProcedureDto {
+  id: number;
+  username: string;
+  procedureId: number;
+  visitedAt: string | Date;
+  productCode: string | null;
+  procedureCountry: string | null;
 }
 
 
