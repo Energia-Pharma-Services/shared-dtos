@@ -109,3 +109,18 @@ export interface UserAuditTrail {
   changes: Record<string, { new: string; old: string }>;
   updatedBy: string;
 }
+
+export interface LdapUser {
+  uid: string;
+  givenName: string;
+  sn: string;
+  mail: string;
+}
+
+export interface UserRepresentation {
+  id: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+}
