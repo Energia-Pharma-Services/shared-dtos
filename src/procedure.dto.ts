@@ -287,7 +287,13 @@ export interface ProcedureFilterParams {
   country?: string[];
   procedureType?: string;
   productCode?: string;
+  deadline?: {
+    type: 'equals' | 'lessThan' | 'greaterThan' | 'inRange';
+    dateFrom: string;
+    dateTo?: string;
+  };
 }
+
 
 export interface RecentlyVisitedProcedureDto {
   id: number;
