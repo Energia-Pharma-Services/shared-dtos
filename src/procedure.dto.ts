@@ -291,6 +291,7 @@ export interface ProcedureFilterParams {
   authorisationStatus?: string[];
   teamMembers?: string[];
   country?: string[];
+  priority?: string[];
   maHolder?: string;
   procedureType?: string;
   productCode?: string;
