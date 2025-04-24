@@ -203,6 +203,12 @@ export const procedureTypes = {
   RE_REGISTERATION: 'Re-registration',
 } as const;
 
+export const priorityTypes = {
+  HIGH: 'High',
+  MEDIUM: 'Medium',
+  LOW: 'Low',
+} as const;
+
 export type ProcedureTypeEntites =
   (typeof procedureTypes)[keyof typeof procedureTypes];
 
@@ -285,7 +291,8 @@ export interface ProcedureFilterParams {
   authorisationStatus?: string[];
   teamMembers?: string[];
   country?: string[];
-  maHolder?: string[];
+  priority?: string[];
+  maHolder?: string;
   procedureType?: string;
   productCode?: string;
   deadline?: {
