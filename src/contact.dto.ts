@@ -234,6 +234,7 @@ export type SiteTypeEntities = (typeof siteTypes)[keyof typeof siteTypes];
 export interface ContactFilterParams {
   'companyInformation.companyName'?: string;
   'companyInformation.companyType'?: string[];
+  'companyInformation.companyCountry'?: string[];
   'generalInformation.relationType'?: string[];
   'companyInformation.companyEmail'?: string;
   'contactInformation.name'?: string;
