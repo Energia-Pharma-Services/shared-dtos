@@ -295,6 +295,7 @@ export interface ProcedureFilterParams {
   maHolder?: string;
   procedureType?: string;
   productCode?: string;
+  parentProductCode?: string;
   productName?: string;
   deadline?: {
     type: 'equals' | 'lessThan' | 'greaterThan' | 'inRange';
