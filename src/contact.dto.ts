@@ -179,7 +179,7 @@ export const companyTypes = {
   MAHOLDER: 'MA Holder',
   MFP: 'Manufacturer Finished Product',
   BR: 'Batch Releaser',
-  MAS: 'Manufacturer Active substance',
+  MAS: 'Manufacturer Active Substance',
   MOH: 'Ministry of Health',
   LED: 'Local entity Distribution',
   LEP: 'Local entity Promotion',
@@ -192,7 +192,7 @@ export type CompanyTypeEntites =
 export type CompanyTypeEntitesForProducts = Extract<
   CompanyTypeEntites,
   | 'Manufacturer Finished Product'
-  | 'Manufacturer Active substance'
+  | 'Manufacturer Active Substance'
   | 'Batch Releaser'
 >;
 
