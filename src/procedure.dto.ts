@@ -220,6 +220,8 @@ export const authorisationStatus = {
   REJECTED: 'Rejected',
   WITHDRAWN: 'Withdrawn',
   NOT_RENEWED: 'Not renewed',
+  EXPIRED: 'Expired',
+  RENEWED: 'Renewed'
 } as const;
 
 export type AuthorisationStatusEntites =
