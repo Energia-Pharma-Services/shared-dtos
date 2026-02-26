@@ -299,6 +299,15 @@ export interface ProcedureFilterParams {
   productCode?: string;
   parentProductCode?: string;
   productName?: string;
+  genericName?: string;
+  strength?: string;
+  packSize?: string;
+  productType?: string;
+  maNumber?: string;
+  initialMaNumber?: string;
+  variationType?: string;
+  remarks?: string;
+  milestonesAchieved?: string[];
   deadline?: {
     type: 'equals' | 'lessThan' | 'greaterThan' | 'inRange';
     dateFrom: string;
