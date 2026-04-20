@@ -294,7 +294,7 @@ export interface ProcedureFilterParams {
   teamMembers?: string[];
   country?: string[];
   priority?: string[];
-  maHolder?: string;
+  maHolder?: string[];
   procedureType?: string;
   procedureTypeFilter?: string; // 'equals' | 'contains'
   productCode?: string;
