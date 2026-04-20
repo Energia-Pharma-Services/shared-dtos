@@ -314,6 +314,11 @@ export interface ProcedureFilterParams {
     dateFrom: string;
     dateTo?: string;
   };
+  maDate?: {
+    type: 'equals' | 'lessThan' | 'greaterThan' | 'inRange';
+    dateFrom: string;
+    dateTo?: string;
+  };
 }
 
 
