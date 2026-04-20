@@ -296,6 +296,7 @@ export interface ProcedureFilterParams {
   priority?: string[];
   maHolder?: string;
   procedureType?: string;
+  procedureTypeFilter?: string; // 'equals' | 'contains'
   productCode?: string;
   parentProductCode?: string;
   productName?: string;
