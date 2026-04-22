@@ -314,6 +314,36 @@ export interface ProcedureFilterParams {
     dateFrom: string;
     dateTo?: string;
   };
+  dossierSent?: {
+    type: 'equals' | 'lessThan' | 'greaterThan' | 'inRange';
+    dateFrom: string;
+    dateTo?: string;
+  };
+  dossierSubmitted?: {
+    type: 'equals' | 'lessThan' | 'greaterThan' | 'inRange';
+    dateFrom: string;
+    dateTo?: string;
+  };
+  query1Received?: {
+    type: 'equals' | 'lessThan' | 'greaterThan' | 'inRange';
+    dateFrom: string;
+    dateTo?: string;
+  };
+  query2Received?: {
+    type: 'equals' | 'lessThan' | 'greaterThan' | 'inRange';
+    dateFrom: string;
+    dateTo?: string;
+  };
+  query1Sent?: {
+    type: 'equals' | 'lessThan' | 'greaterThan' | 'inRange';
+    dateFrom: string;
+    dateTo?: string;
+  };
+  query2Sent?: {
+    type: 'equals' | 'lessThan' | 'greaterThan' | 'inRange';
+    dateFrom: string;
+    dateTo?: string;
+  };
   maDate?: {
     type: 'equals' | 'lessThan' | 'greaterThan' | 'inRange';
     dateFrom: string;
