@@ -303,7 +303,7 @@ export interface ProcedureFilterParams {
   genericName?: string;
   strength?: string;
   packSize?: string;
-  productType?: string;
+  productType?: string[];
   maNumber?: string;
   initialMaNumber?: string;
   variationType?: string;

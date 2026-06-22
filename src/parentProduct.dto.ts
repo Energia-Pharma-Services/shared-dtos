@@ -52,5 +52,5 @@ export interface ParentProductFilterParams {
   productName?: string;
   activeSubstance?: string;
   atcCode?: string;
-  productType?: string;
+  productType?: string[];
 }
