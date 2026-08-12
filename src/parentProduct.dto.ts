@@ -4,6 +4,8 @@ export interface CreateParentProductRequest {
   activeSubstance: string[];
   atcCode: string;
   productType: string;
+  brand?: string;
+  therapeuticClass?: string;
 }
 
 export interface UpdateParentProductDto {
@@ -12,6 +14,8 @@ export interface UpdateParentProductDto {
   activeSubstance?: string[];
   atcCode?: string;
   productType?: string;
+  brand?: string;
+  therapeuticClass?: string;
   isActive?: boolean;
   isDeleted?: boolean;
 }
@@ -23,6 +27,8 @@ export interface ParentProductDto {
   activeSubstance: string[];
   atcCode: string;
   productType: string;
+  brand: string;
+  therapeuticClass: string;
   createdAt: Date;
   createdBy: string;
   updatedAt: Date;
@@ -53,4 +59,6 @@ export interface ParentProductFilterParams {
   activeSubstance?: string;
   atcCode?: string;
   productType?: string[];
+  brand?: string;
+  therapeuticClass?: string;
 }
