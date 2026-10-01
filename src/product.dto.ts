@@ -41,6 +41,7 @@ export interface GeneralInformation {
   countries: CountryDto[] | [];
   maCountryOfOriginDoc?: number | null;
   maCountryOfOrigin?: string | null;
+  isCatalogueActive?: boolean;
 }
 
 export interface PresentationInformation {
@@ -100,6 +101,7 @@ export interface ProductMain {
   packSize: string | null;
   routeOfAdministration: string | null;
   isActive: boolean;
+  isCatalogueActive: boolean;
   isDeleted: boolean;
   createdAt: Date;
   createdBy: string;
@@ -151,6 +153,7 @@ export interface ProductToUpdate {
   routeOfAdministration: string | null;
   maCountryOfOriginDoc?: number | null;
   maCountryOfOrigin?: string | null;
+  isCatalogueActive?: boolean;
   updatedBy: string;
   updatedAt: Date;
 }
